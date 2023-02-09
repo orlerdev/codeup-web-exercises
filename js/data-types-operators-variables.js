@@ -1,11 +1,11 @@
 let a = 1;
 // console.log(a); // 1
 
-let b = a++;
+let b = a++; // post-increment, so it will add 1 after the next line
 // console.log(a++);
 // console.log(b); // 1
 
-let c = ++a;
+let c = ++a; // pre-increment, so it will add 1 before the next line
 // console.log(++a);
 // console.log(c); // 3
 
@@ -16,19 +16,20 @@ let d = "hello";
 let e = false;
 
 // console.log(d++); // NaN
-// console.log(e++); // 0
+// console.log(e++); // 1 (JS will interpret false as 0 since 0 is a falsy value))
 
-var perplexed; // perplexed is undefined (no value is assigned)
+let perplexed; // perplexed is undefined (no value is assigned)
 perplexed + 2;
 // console.log(perplexed + 2); // NaN
 
-var price = 2.7;
-price.toFixed(2);
-// console.log(price.toFixed(2)); // 2.70
+let price = 2.7;
+// price.toFixed(2);
+// console.log(price.toFixed(2)); // "2.70"
 
-var price = "2.7";
+let price = "2.7";
 // price.toFixed(2); // typeof string
 // console.log(price.toFixed(2)); // error, cannot call toFixed() on a string
+// console.log(parseFloat(price).toFixed(2)); // "2.70" (will work because price is parsed first)
 
 isNaN(0) // false
 
