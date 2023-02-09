@@ -119,6 +119,11 @@ let totalPay = googlePay + amazonPay + facebookPay;
 let classSpace = false;
 let schedule = "No conflict";
 let enrollment = classSpace && schedule === "No conflict" ? true : false;
+
+let classSpaceAlt = true;
+let scheduleAlt = false;
+let enrollmentAlt = classSpaceAlt && scheduleAlt;
+console.log(enrollmentAlt);
 // console.log(enrollment);
 
 // A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
@@ -157,7 +162,7 @@ if (userCharCount < 21 && username.charAt(0) !== "") {
   validUsername = true;
 }
 
-console.log(validPassword, validUsername);
+// console.log(validPassword, validUsername);
 
 
 
