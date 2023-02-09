@@ -19,7 +19,7 @@ let validPassword = false;
 while (!validUserName) {
 
   username = prompt("Please enter a username. Your username cannot exceed 20 characters.");
-  if (username.length > 20 || username.charAt(0) === " ") {
+  if (username.length > 20 || username.startsWith(" ") || username.endsWith(" ")) {
     validUserName = false;
     alert("Invalid username. Please note requirements");
   } else {
@@ -32,7 +32,7 @@ while (!validPassword) {
 
   password = prompt("Please create a password. Your password must be at least 5 characters and cannot contain your username.");
   console.log(password.length, password.charAt(0), password.includes(username));
-  if (password.length < 5 || password.charAt(0) === " " || password.includes(username)) {
+  if (password.length < 5 || password.startsWith(" ") || password.endsWith(" ") || password.includes(username)) {
     validPassword = false;
     alert("Please enter a valid password");
   } else {
