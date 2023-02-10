@@ -51,23 +51,17 @@ Price per movie: $3.00 per day
 if (confirm("Would you like to complete the Movie Rental Exercise?")) {
   let pricePerDay = 3;
   let littleMermaidDays = parseFloat(prompt("How many days would you like to rent The Little Mermaid?"));
-  if (confirm("Are you sure?")) {
-    alert("Thank you!");
-  } else {
+  if (!confirm("Are you sure?")) {
     littleMermaidDays = parseFloat(prompt("Please enter the correct number of days."));
   }
 
   let brotherBearDays = parseFloat(prompt("How many days would you like to rent Brother Bear?"));
-  if (confirm("Are you sure?")) {
-    alert("Thank you!");
-  } else {
+  if (!confirm("Are you sure?")) {
     brotherBearDays = parseFloat(prompt("Please enter the correct number of days."));
   }
 
   let herculesDays = parseFloat(prompt("How many days would you like to rent Hercules?"));
-  if (confirm("Are you sure?")) {
-    alert("Thank you!");
-  } else {
+  if (!confirm("Are you sure?")) {
     herculesDays = parseFloat(prompt("Please enter the correct number of days."));
   }
 
@@ -82,22 +76,19 @@ Amazon rate: $380.00 per hour
 Facebook rate: $350.00 per hour
  */
 if (confirm("Would you like to complete the Salary Exercise?")) {
+
   let googleRate = parseFloat(prompt("Enter the number of hours that you worked for Google.")) * 400;
-  if (confirm("Are you sure?")) {
-    alert("Thank you!");
-  } else {
+  if (!confirm("Are you sure?")) {
     googleRate = parseFloat(prompt("Please enter the correct number of hours.")) * 400;
   }
+
   let amazonRate = parseFloat(prompt("Enter the number of hours that you worked for Amazon.")) * 380;
-  if (confirm("Are you sure?")) {
-    alert("Thank you!");
-  } else {
+  if (!confirm("Are you sure?")) {
     amazonRate = parseFloat(prompt("Please enter the correct number of hours.")) * 380;
   }
+
   let facebookRate = parseFloat(prompt("Enter the number of hours that you worked for Facebook.")) * 350;
-  if (confirm("Are you sure?")) {
-    alert("Thank you!");
-  } else {
+  if (!confirm("Are you sure?")) {
     facebookRate = parseFloat(prompt("Please enter the correct number of hours.")) * 350;
   }
 
@@ -112,8 +103,17 @@ A student can be enrolled in a class only if the class is not full and the class
 
 if (confirm("Would you like to complete the Enrollment Exercise?")) {
   let classMax = prompt("What is the maximum amount of students allowed to attend this class?");
+  if (!confirm("Are you sure?")) {
+    classMax = prompt("Please enter the correct maximum number of students.");
+  }
   let currentClassCount = prompt("What is the current number of students enrolled in this class?");
+  if (!confirm("Are you sure?")) {
+    currentClassCount = prompt("Please enter the correct number of students enrolled.");
+  }
   let scheduleConflict = prompt("Does the student have a schedule conflict? Enter 'yes' or 'no'.");
+  if (!confirm("Are you sure?")) {
+    scheduleConflict = prompt("Please enter 'yes' or 'no'.");
+  }
   scheduleConflict = scheduleConflict.toLowerCase() === "yes";
   let allowedToEnroll = (currentClassCount < classMax) && !scheduleConflict;
 
