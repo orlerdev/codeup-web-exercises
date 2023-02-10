@@ -122,7 +122,7 @@ let facebookPay = 350 * 10;
 let totalPay = googlePay + amazonPay + facebookPay;
 let altTotalPay = totalPay.toLocaleString("en-Us", {style: "currency", currency: "USD"});
 // console.log(`Your total pay for the week would be $${totalPay.toFixed(2)}.`);
-// console.log(`Your total pay for the week would be ${altTotalPay}.`);
+console.log(`Your total pay for the week would be ${altTotalPay}.`);
 
 // A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.
 
@@ -131,12 +131,12 @@ let classCount = 24;
 let availableSeats = classCount < classMax;
 let schedule = false;
 let enrollment = availableSeats && !schedule;
-console.log(enrollment);
+// console.log(enrollment);
 
 let classSpaceAlt = true;
 let scheduleAlt = false;
 let enrollmentAlt = classSpaceAlt && !scheduleAlt;
-console.log(enrollmentAlt);
+// console.log(enrollmentAlt);
 // console.log(enrollment);
 
 // A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
