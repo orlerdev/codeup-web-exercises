@@ -49,23 +49,26 @@ Number of Days for each movie: 3, 5, 1
 Price per movie: $3.00 per day
  */
 if (confirm("Would you like to complete the Movie Rental Exercise?")) {
-  let pricePerDay = 3;
-  let littleMermaidDays = parseFloat(prompt("How many days would you like to rent The Little Mermaid?"));
+  let pricePerDay = parseFloat(prompt("How much does it cost to rent a movie for one day?"));
+  let firstMovie = prompt("What is the name of the first movie?");
+  let firstMovieCount = parseFloat(prompt(`How many days would you like to rent ${firstMovie}?`));
   if (!confirm("Are you sure?")) {
-    littleMermaidDays = parseFloat(prompt("Please enter the correct number of days."));
+    firstMovieCount = parseFloat(prompt("Please enter the correct number of days."));
   }
 
-  let brotherBearDays = parseFloat(prompt("How many days would you like to rent Brother Bear?"));
+  let secondMovie = prompt("What is the name of the second movie?");
+  let secondMovieCount = parseFloat(prompt(`How many days would you like to rent ${secondMovie}?`));
   if (!confirm("Are you sure?")) {
-    brotherBearDays = parseFloat(prompt("Please enter the correct number of days."));
+    secondMovieCount = parseFloat(prompt("Please enter the correct number of days."));
   }
 
-  let herculesDays = parseFloat(prompt("How many days would you like to rent Hercules?"));
+  let thirdMovie = prompt("What is the name of the third movie?");
+  let thirdMovieCount = parseFloat(prompt(`How many days would you like to rent ${thirdMovie}?`));
   if (!confirm("Are you sure?")) {
-    herculesDays = parseFloat(prompt("Please enter the correct number of days."));
+    thirdMovieCount = parseFloat(prompt("Please enter the correct number of days."));
   }
 
-  let totalCost = (littleMermaidDays + brotherBearDays + herculesDays) * pricePerDay;
+  let totalCost = (firstMovieCount + secondMovieCount + thirdMovieCount) * pricePerDay;
   let userCost = totalCost.toLocaleString("en-US", { style: "currency", currency: "USD" });
   alert(`Thank you for your order. Your total will be ${userCost}.`);
 }
@@ -77,22 +80,28 @@ Facebook rate: $350.00 per hour
  */
 if (confirm("Would you like to complete the Salary Exercise?")) {
 
-  let googleRate = parseFloat(prompt("Enter the number of hours that you worked for Google.")) * 400;
+  let googleRate = parseFloat(prompt("How much are you paid by Google per hour?"));
+  let googleHours = parseFloat(prompt("Enter the number of hours that you worked for Google."));
   if (!confirm("Are you sure?")) {
-    googleRate = parseFloat(prompt("Please enter the correct number of hours.")) * 400;
+    googleHours = parseFloat(prompt("Please enter the correct number of hours.")) * googleRate;
   }
+  let googleEarnings = googleHours * googleRate;
 
-  let amazonRate = parseFloat(prompt("Enter the number of hours that you worked for Amazon.")) * 380;
+  let amazonRate = parseFloat(prompt("How much are you paid by Amazon per hour?"));
+  let amazonHours = parseFloat(prompt("Enter the number of hours that you worked for Amazon."));
   if (!confirm("Are you sure?")) {
-    amazonRate = parseFloat(prompt("Please enter the correct number of hours.")) * 380;
+    amazonHours = parseFloat(prompt("Please enter the correct number of hours.")) * amazonRate;
   }
+  let amazonEarnings = amazonHours * amazonRate;
 
-  let facebookRate = parseFloat(prompt("Enter the number of hours that you worked for Facebook.")) * 350;
+  let facebookRate = parseFloat(prompt("How much are you paid by Facebook per hour?"));
+  let facebookHours = parseFloat(prompt("Enter the number of hours that you worked for Facebook."));
   if (!confirm("Are you sure?")) {
-    facebookRate = parseFloat(prompt("Please enter the correct number of hours.")) * 350;
+    facebookHours = parseFloat(prompt("Please enter the correct number of hours.")) * 350;
   }
+  let facebookEarnings = facebookHours * facebookRate;
 
-  let totalEarnings = (amazonRate + googleRate + facebookRate).toLocaleString("en-US", { style: "currency", currency: "USD" });
+  let totalEarnings = (amazonEarnings + googleEarnings + facebookEarnings).toLocaleString("en-US", { style: "currency", currency: "USD" });
 
   alert(`Thank you. Your total earnings for the reported period are ${totalEarnings}.`);
 }
@@ -102,17 +111,17 @@ A student can be enrolled in a class only if the class is not full and the class
  */
 
 if (confirm("Would you like to complete the Enrollment Exercise?")) {
-  let classMax = prompt("What is the maximum amount of students allowed to attend this class?");
+  let classMax = parseInt(prompt("What is the maximum amount of students allowed to attend this class?"));
   if (!confirm("Are you sure?")) {
-    classMax = prompt("Please enter the correct maximum number of students.");
+    classMax = parseInt(prompt("Please enter the correct maximum number of students."));
   }
-  let currentClassCount = prompt("What is the current number of students enrolled in this class?");
+  let currentClassCount = parseInt(prompt("What is the current number of students enrolled in this class?"));
   if (!confirm("Are you sure?")) {
-    currentClassCount = prompt("Please enter the correct number of students enrolled.");
+    currentClassCount = parseInt(prompt("Please enter the correct number of students enrolled."));
   }
-  let scheduleConflict = prompt("Does the student have a schedule conflict? Enter 'yes' or 'no'.");
+  let scheduleConflict = parseInt(prompt("Does the student have a schedule conflict? Enter 'yes' or 'no'."));
   if (!confirm("Are you sure?")) {
-    scheduleConflict = prompt("Please enter 'yes' or 'no'.");
+    scheduleConflict = parseInt(prompt("Please enter 'yes' or 'no'."));
   }
   scheduleConflict = scheduleConflict.toLowerCase() === "yes";
   let allowedToEnroll = (currentClassCount < classMax) && !scheduleConflict;
@@ -120,3 +129,14 @@ if (confirm("Would you like to complete the Enrollment Exercise?")) {
   allowedToEnroll ? alert("The student is allowed to enroll.") : alert("The student is not allowed to enroll at this time.");
 }
 
+if (confirm("Would you like to complete the Shopper Exercise?")) {
+  let minCartValue = 2;
+  let numberOfItems = parseInt(prompt("How many items are you purchasing?"));
+  let premiumMember = prompt("Are you a premium member? Enter 'yes' or 'no'.");
+  premiumMember = premiumMember.toLowerCase() === "yes";
+  let offerExpired = prompt("Is the offer expired? Enter 'yes' or 'no'.");
+  offerExpired = offerExpired.toLowerCase() === "yes";
+  let canPurchase = (numberOfItems >= minCartValue && !offerExpired) || (premiumMember && !offerExpired);
+  canPurchase ? alert(`The customer can purchase ${numberOfItems})`) : alert("The customer cannot purchase at this time.");
+
+}
