@@ -88,10 +88,10 @@ console.log(calculateTip(0.15, 33.42));
  * then display the dollar amount they should tip
  */
 
-// let billTotal = parseFloat(prompt("What is the total of your bill?")).toFixed(2);
-// let tipPercent = parseFloat(prompt("What percentage would you like to tip?")).toFixed(2) / 100;
-// let tipAmount = calculateTip(tipPercent, billTotal);
-// alert(`You should leave ${(tipAmount).toLocaleString("en-US", {style: "currency", currency: "USD"})} for the tip`);
+let billTotal = parseFloat(prompt("What is the total of your bill?")).toFixed(2);
+let tipPercent = parseFloat(prompt("What percentage would you like to tip?")).toFixed(2) / 100;
+let tipAmount = calculateTip(tipPercent, billTotal);
+alert(`You should leave ${(tipAmount).toLocaleString("en-US", {style: "currency", currency: "USD"})} for the tip`);
 
 
 /**
