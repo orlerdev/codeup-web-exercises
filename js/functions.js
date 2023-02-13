@@ -78,14 +78,14 @@ isTwo(random);
 
 const calculateTip = (tipPercent, billTotal) => {
   // if user enters a whole number instead of a percentage
-  if (parseFloat(tipPercent) >=1) {
+  if (parseFloat(tipPercent) >= 1) {
     tipPercent = parseFloat(tipPercent) / 100;
     return parseFloat(billTotal) * parseFloat(tipPercent);
   } else {
     // if user enters a percentage
-  return parseFloat(billTotal) * parseFloat(tipPercent);
+    return parseFloat(billTotal) * parseFloat(tipPercent);
   }
-}
+};
 
 // console.log(calculateTip(0.20, 20));
 // console.log(calculateTip(20, 20));
@@ -100,10 +100,9 @@ const calculateTip = (tipPercent, billTotal) => {
  */
 
 // let billTotal = parseFloat(prompt("What is the total of your bill?")).toFixed(2);
-// let tipPercent = parseFloat(prompt("What percentage would you like to tip?")).toFixed(2) / 100;
+// let tipPercent = parseFloat(prompt("What percentage would you like to tip?")).toFixed(2);
 // let tipAmount = calculateTip(tipPercent, billTotal);
 // alert(`You should leave ${(tipAmount).toLocaleString("en-US", {style: "currency", currency: "USD"})} for the tip`);
-
 
 /**
  * TODO:
@@ -121,6 +120,48 @@ const calculateTip = (tipPercent, billTotal) => {
  */
 
 const applyDiscount = (price, discount) => {
-  return  (price - (price * discount)).toLocaleString("en-US", {style: "currency", currency: "USD"});
-}
+  return (price - (price * discount)).toLocaleString("en-US", { style: "currency", currency: "USD" });
+};
+
+/*
+*TODO:
+* Write a function that accepts a string and returns it reversed
+ */
+const reverseString = (str) => str.split("").reverse().join("");
+// console.log(reverseString("codeup"));
+
+/*
+*TODO:
+* Write a function that accepts a last name and a first name and returns the full name in one string.
+ */
+const fullName = (firstName, lastName) => `${firstName} ${lastName}`;
+// console.log(fullName("Jared", "Orler"));
+
+/*
+*TODO:
+* Write a function that accepts a number and returns it negative. Negative numbers and zero should be unchanged.
+ */
+const negativeNumber = (input) => typeof input === "string" || isNaN(parseFloat(input)) ? console.log("Invalid input") : input <= 0 ? input : -Math.abs(input);
+console.log(negativeNumber("nine"));
+
+/*
+*TODO:
+* Write a function that accepts a month as an integer from 1 to 12 and returns the quarter of the year it belongs to as an integer.
+ */
+const quarterOfYear = (month) => month <= 3 ? 1 : month <= 6 ? 2 : month <= 9 ? 3 : 4;
+// console.log(quarterOfYear(4));
+
+/*
+*TODO:
+* Write a function that accepts two numbers which represent the interior angles of a triangle and return the third angle.
+ */
+const thirdAngle = (angle1, angle2) => 180 - (angle1 + angle2);
+// console.log(thirdAngle(30, 60));
+
+/*
+*TODO:
+* Write a function that accepts three parameters (h, m, s) and returns the time since midnight in milliseconds.
+ */
+const timeSinceMidnight = (h, m, s) => (h * 3600000) + (m * 60000) + (s * 1000);
+// console.log(timeSinceMidnight(0, 1, 1));
 
