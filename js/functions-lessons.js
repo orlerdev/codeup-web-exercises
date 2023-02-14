@@ -103,14 +103,17 @@
 // ANONYMOUS FUNCTIONS
 
 // IIFE - Immediately Invoked Function Expression arrow function.
-  (() => {
+//  (() => {
     // variables are block scoped
     // any functionality here is run immediately
-  })();
+//  })();
 // IIFE - Immediately Invoked Function Expression regular function.
-  (function () {
+//  (function () {
     // variables are block scoped
     // any functionality here is run immediately
-  })();
+//  })();
+
+
+
 
 })();
