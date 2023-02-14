@@ -1,5 +1,5 @@
 "use strict";
-// (() => {
+(() => {
 // IIFE - Immediately Invoked Function Expression
 //
 // *TODO: Even or Odd Numbers
@@ -24,6 +24,11 @@ function reformatDate(date) {
     newDateString = `${month}/${day}/${year}`;
   }
   return newDateString;
+}
+
+// *TODO: Currency Formatting
+const formatCurrency = (num, lang="en", country="US", style="currency", currency="USD") => {
+  return parseFloat(num).toLocaleString(`${lang}-${country}`, { style: style, currency: currency });
 }
 
 // *TODO: Do something "x" number of times
@@ -213,7 +218,8 @@ const reducer = (total, currentUser) => {
 };
 // users.reduce(reducer, 0);
 
-// })();
+
+})();
 
 
 

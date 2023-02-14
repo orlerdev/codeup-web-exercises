@@ -22,19 +22,20 @@
  * console.logging the function's return value
  */
 
-// const analyzeColor = (colorName) => {
-//   if (colorName === "blue") {
-//     return "blue is the color of the sky";
-//   } else if (colorName === "green") {
-//     return "green is the color of grass";
-//   } else if (colorName === "red") {
-//     return "red is the color of fire trucks";
-//   } else if (colorName === "yellow") {
-//     return "you should never eat yellow snow";
-//   } else {
-//     return "i don't have a response for that color";
-//   }
-// };
+const analyzeColor = (colorName) => {
+  if (colorName.match(/blue/i)) {
+    return "Blue is the color of the sky";
+  } else if (colorName.match(/green/i)) {
+    return "Green is the color of grass";
+  } else if (colorName.match(/red/i)) {
+    return "Red is the color of fire trucks";
+  } else if (colorName.match(/yellow/i)) {
+    return "You should never eat yellow snow";
+  } else {
+    return "I don't have a response for that color";
+  }
+};
+// console.log(analyzeColor("YELLOW"));
 
 // console.log(analyzeColor("blue"));
 // console.log(analyzeColor("green"));
@@ -48,8 +49,8 @@
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-// let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
-// let randomColor = colors[Math.floor(Math.random() * colors.length)];
+let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+let randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
@@ -62,25 +63,26 @@
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-// const analyzeColorSwitch = (colorName) => {
-//   switch (colorName) {
-//     case "blue":
-//       return "blue is the color of the sky";
-//       break;
-//     case "green":
-//       return "green is the color of grass";
-//       break;
-//     case "red":
-//       return "red is the color of fire trucks";
-//       break;
-//     case "yellow":
-//       return "you should never eat yellow snow";
-//       break;
-//     default:
-//       return "i don't have a response for that color";
-//   }
-// };
+const analyzeColorSwitch = (colorName) => {
+  switch (colorName.toLowerCase()) {
+    case "blue":
+      return "Blue is the color of the sky";
+      break;
+    case "green":
+      return "Green is the color of grass";
+      break;
+    case "red":
+      return "Red is the color of fire trucks";
+      break;
+    case "yellow":
+      return "You should never eat yellow snow";
+      break;
+    default:
+      return "I don't have a response for that color";
+  }
+};
 
+// console.log(analyzeColorSwitch("BLUE"));
 // console.log(analyzeColorSwitch(randomColor));
 
 /**
@@ -119,16 +121,16 @@ let luckyNumber = Math.floor(Math.random() * 6);
 const calculateTotal = (luckyNumber, totalAmount) => {
   switch (luckyNumber) {
     case 1:
-      return totalAmount - totalAmount * .1;
+      return totalAmount * .9;
       break;
     case 2:
-      return totalAmount - totalAmount * .25;
+      return totalAmount * .75;
       break;
     case 3:
-      return totalAmount - totalAmount * .35;
+      return totalAmount * .65;
       break;
     case 4:
-      return totalAmount - totalAmount * .5;
+      return totalAmount * .5;
       break;
     case 5:
       return totalAmount - totalAmount;
@@ -137,12 +139,14 @@ const calculateTotal = (luckyNumber, totalAmount) => {
       return totalAmount;
   }
 };
+
 // console.log(calculateTotal(0, 100));
 // console.log(calculateTotal(1, 100));
 // console.log(calculateTotal(2, 100));
 // console.log(calculateTotal(3, 100));
 // console.log(calculateTotal(4, 100));
 // console.log(calculateTotal(5, 100));
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -153,12 +157,13 @@ const calculateTotal = (luckyNumber, totalAmount) => {
  */
 // Generate a random number between 0 and 6
 // let luckyNumber = Math.floor(Math.random() * 6);
-let totalAmount = parseFloat(prompt("Please enter your total bill"));
-let formattedTotal = totalAmount.toLocaleString("en-US", { style: "currency", currency: "USD" });
-alert(`Your lucky number is ${luckyNumber}.`);
-alert(`Your total bill was ${formattedTotal}.`);
-let formattedDiscountTotal = calculateTotal(luckyNumber, totalAmount).toLocaleString("en-US", { style: "currency", currency: "USD" });
-alert(`Your discounted price is now ${formattedDiscountTotal}.`);
+
+// let totalAmount = parseFloat(prompt("Please enter your total bill"));
+// let formattedTotal = totalAmount.toLocaleString("en-US", { style: "currency", currency: "USD" });
+// alert(`Your lucky number is ${luckyNumber}.`);
+// alert(`Your total bill was ${formattedTotal}.`);
+// let formattedDiscountTotal = calculateTotal(luckyNumber, totalAmount).toLocaleString("en-US", { style: "currency", currency: "USD" });
+// alert(`Your discounted price is now ${formattedDiscountTotal}.`);
 
 /**
  * TODO:
@@ -193,14 +198,24 @@ alert(`Your discounted price is now ${formattedDiscountTotal}.`);
 const isEvenOrOdd = (num) => num % 2 === 0 ? "even" : "odd";
 const add100 = (num) => parseFloat(num) + 100;
 const isPositiveOrNegative = (num) => parseFloat(num) > 0 ? "positive" : "negative";
+const validNum = (num) => !isNaN(parseFloat(num));
 
-if (confirm("Would you like to enter a number?")) {
-  let userNum = prompt("Please enter a number.");
-  if (isNaN(parseFloat(userNum))) {
-    alert("That is not a number");
-  } else {
-    alert(`Your number is ${isEvenOrOdd(userNum)}`);
-    alert(`Your number plus 100 equals ${add100(userNum)}`);
-    alert(`Your number is a ${isPositiveOrNegative(userNum)} number`);
+let userAccepts = confirm("Would you like to enter a number?");
+  while (true) {
+    if (userAccepts) {
+      let userNum = prompt("Please enter a number.");
+      if (!validNum(userNum)) {
+        alert("That is not a number");
+        continue;
+      } else {
+        alert(`Your number is ${isEvenOrOdd(userNum)}`);
+        alert(`Your number plus 100 equals ${add100(userNum)}`);
+        alert(`Your number is a ${isPositiveOrNegative(userNum)} number`);
+        alert(`Thank you for participating!`);
+        break;
+      }
+    }
   }
-}
+
+
+
