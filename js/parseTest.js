@@ -67,18 +67,25 @@ function floatPostParsedInput(input) {
 // console.log(`${floatPreParsedInput("1")}\n`);
 // console.log(`${floatPostParsedInput("1")}\n`);
 
-console.log(`${incrementPre(true)}\n`);
-console.log(`${incrementPost(true)}\n`);
-console.log(`${preParsedInput(true)}\n`);
-console.log(`${postParsedInput(true)}\n`);
-console.log(`${floatPreParsedInput(true)}\n`);
-console.log(`${floatPostParsedInput(true)}\n`);
+// console.log(`${incrementPre(true)}\n`);
+// console.log(`${incrementPost(true)}\n`);
+// console.log(`${preParsedInput(true)}\n`);
+// console.log(`${postParsedInput(true)}\n`);
+// console.log(`${floatPreParsedInput(true)}\n`);
+// console.log(`${floatPostParsedInput(true)}\n`);
+console.log(`${parsedTest(true)}\n`);
+console.log(`${floatParsedTest(true)}\n`);
+console.log(`${preTest(true)}\n`);
+console.log(`${postTest(true)}\n`);
 
 
-console.log(`${incrementPre(false)}\n`);
-console.log(`${incrementPost(false)}\n`);
-console.log(`${preParsedInput(false)}\n`);
-console.log(`${postParsedInput(false)}\n`);
-console.log(`${floatPreParsedInput(false)}\n`);
-console.log(`${floatPostParsedInput(false)}\n`);
-
+// console.log(`${incrementPre(false)}\n`);
+// console.log(`${incrementPost(false)}\n`);
+// console.log(`${preParsedInput(false)}\n`);
+// console.log(`${postParsedInput(false)}\n`);
+// console.log(`${floatPreParsedInput(false)}\n`);
+// console.log(`${floatPostParsedInput(false)}\n`);
+console.log(`${parsedTest(false)}\n`);
+console.log(`${floatParsedTest(false)}\n`);
+console.log(`${preTest(false)}\n`);
+console.log(`${postTest(false)}\n`);
