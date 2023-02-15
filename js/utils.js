@@ -1,5 +1,5 @@
 "use strict";
-(() => {
+// (() => {
 // IIFE - Immediately Invoked Function Expression
 //
 // *TODO: Even or Odd Numbers
@@ -48,7 +48,7 @@ const times = (times, func) => {
 // times(3, () => console.log("hello"));
 
 // *TODO: Generate a random number within a range
-const getRandomNumberInRange = (lower = 0, upper = 10) => {
+const getRandomNumInRange = (lower = 0, upper = 10) => {
   if (isNaN(lower) || isNaN(upper)) {
     console.error("lower and upper must be valid numbers");
     return;
@@ -219,7 +219,7 @@ const reducer = (total, currentUser) => {
 // users.reduce(reducer, 0);
 
 
-})();
+// })();
 
 
 
