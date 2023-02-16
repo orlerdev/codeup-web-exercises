@@ -58,6 +58,10 @@ const getRandomNumInRange = (lower = 0, upper = 10) => {
   return Math.floor(Math.random() * (upper - lower + 1)) + lower;
 };
 
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min +1) + min);
+}
+
 // *TODO: Shorten a string with ellipses
 const shorten = (text, length = 10, ellipsisCount = 3) => {
   if (!(typeof text === "string" || text instanceof String)) {

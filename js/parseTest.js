@@ -73,19 +73,21 @@ function floatPostParsedInput(input) {
 // console.log(`${postParsedInput(true)}\n`);
 // console.log(`${floatPreParsedInput(true)}\n`);
 // console.log(`${floatPostParsedInput(true)}\n`);
-console.log(`${parsedTest(true)}\n`);
-console.log(`${floatParsedTest(true)}\n`);
-console.log(`${preTest(true)}\n`);
-console.log(`${postTest(true)}\n`);
+// console.log(`${parsedTest(true)}\n`);
+// console.log(`${floatParsedTest(true)}\n`);
+// console.log(`${preTest(true)}\n`);
+// console.log(`${postTest(true)}\n`);
 
 
-// console.log(`${incrementPre(false)}\n`);
-// console.log(`${incrementPost(false)}\n`);
-// console.log(`${preParsedInput(false)}\n`);
-// console.log(`${postParsedInput(false)}\n`);
-// console.log(`${floatPreParsedInput(false)}\n`);
-// console.log(`${floatPostParsedInput(false)}\n`);
-console.log(`${parsedTest(false)}\n`);
-console.log(`${floatParsedTest(false)}\n`);
-console.log(`${preTest(false)}\n`);
-console.log(`${postTest(false)}\n`);
+console.log(`${incrementPre(false)}\n`);  // changes the value of the input
+console.log(`${incrementPost(false)}\n`); // changes the value of the input
+console.log(`${preParsedInput(false)}\n`); // does NOT change the value of the input
+console.log(`${postParsedInput(false)}\n`); // does NOT change the value of the input
+console.log(`${floatPreParsedInput(false)}\n`); // does NOT change the value of the input
+console.log(`${floatPostParsedInput(false)}\n`); // does NOT change the value of the input
+// console.log(`${parsedTest(false)}\n`);
+// console.log(`${floatParsedTest(false)}\n`);
+// console.log(`${preTest(false)}\n`);
+// console.log(`${postTest(false)}\n`);
+
+//* TODO: The difference between incrementing prefix or postfix and using parseFloat on the input is that incrementing assigns a new value to the input, and parseFloating only returns the value of the input.
