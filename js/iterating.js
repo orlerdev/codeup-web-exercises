@@ -13,7 +13,11 @@
    * Create a log statement that will log the number of elements in the names
    * array.
    */
+
+
   console.log(`${names.length}`);
+//  console.log(names.length);
+
 
   /**
    * TODO:
@@ -65,10 +69,11 @@
   const second = (arr) => {
     return arr[1];
   };
-  const third = (arr) => {
-    return arr[4];
+
+  const last = (arr) => {
+    return arr[arr.length - 1];
   };
 
-  console.log(`${first(arr)} \n${second(arr)} \n${third(arr)}`);
+  console.log(`${first(arr)} \n${second(arr)} \n${last(arr)}`);
 
 })();
