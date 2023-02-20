@@ -223,6 +223,43 @@ const reducer = (total, currentUser) => {
 };
 // users.reduce(reducer, 0);
 
+//**************************************************// SEQUENCE (RANGE) GENERATOR  // **************************************************//
+const range = (start, stop, step) => Array.from({ length: (stop - start) - 1 / step + 1}, (_, i) => start + i * step);
+
+// GENERATE NUMBERS RANGE USING FUNCTION 0 -> 10
+range(0, 10, 1);
+// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// GENERATE NUMBERS RANGE USING FUNCTION 0 -> 20 WITH STEP 2
+range(0, 20, 2);
+// [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+// GENERATE THE ALPHABET
+let alpha = range("A".charCodeAt(0), "Z".charCodeAt(0), 1).map(x => String.fromCharCode(x));
+// ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+let randomNumberArray = (size) => {
+  return range(0, size, 1).map(x => randomNumber(0, 100));
+}
+// console.log(randomNumberArray(50));
+
+let randNumArr = (arraySize) => {
+  const array = [];
+  for (let i = 0; i < arraySize; i++) {
+    let randomNum = randomNumber(0,20);
+    while(array.includes(randomNum)) {
+      randomNum = randomNumber(0,20);
+    }
+    array.push(randomNumber(0, 20));
+  }
+  return array;
+}
+
+// GENERATE THE ALPHABET IN REVERSE ORDER
+let alphaReverse = range("Z".charCodeAt(0), "A".charCodeAt(0), 1).map(x => String.fromCharCode(x));
+
+// GENERATE UNORDERED LIST FROM ARRAY
+const arrayToUnorderedList = (array) => `<ul>\n\t<li> ${array.join(`</li>\n\t<li>`)} </li>\t\n</ul>`;
 
 // })();
 

@@ -35,14 +35,31 @@
   planetsString = planetsArray.join("<br>");
   // console.log(planetsString);
 
+  const altPlanetsArr = Array.from(planetsString);
+  // console.log(altPlanetsArr);
+
   // create unordered list from planetsArray
-  const arrayToUnorderedList = (array) => {
-    let bonusList = "<ul><li>" + array.join("</li><li>") + "</li></ul>";
-    return bonusList;
-  }
+  // <ul><li>
+  // "Mercury"
+  // </li><li>
+  // "Venus"
+  // </li><li>
+  // "Earth"
+  // </li><li>
+  // "Mars"
+  // </li><li>"
+  // Jupiter"
+  // </li><li>
+  // "Saturn"
+  // </li><li>
+  // "Uranus"
+  // </li><li>
+  // "Neptune"
+  // </li></ul>
+  const arrayToUnorderedList = (array) => `<ul>\n\t<li> ${array.join(`</li>\n\t<li>`)} </li>\t\n</ul>`;
   
-  let bonusString = arrayToUnorderedList(planetsArray);
-  console.log(bonusString);
+  // let bonusString = arrayToUnorderedList(planetsArray);
+  console.log(arrayToUnorderedList(planetsArray));
 
 
 })();
