@@ -82,23 +82,12 @@ const fighter = {
   name: "Arata",
   hitPoints: 18,
   maxDamage: 8,
-  attack: function (enemy) {  // Method <function within an object //
-    console.log(`${enemy.name} has ${enemy.hitPoints} hit points.`);
-    console.log(`${this.name} attacks!`);
-    const damage = Math.ceil(Math.random() * this.maxDamage);
-    console.log(`${this.name} does ${damage} points of damage!`);
-    enemy.hitPoints -= damage;
-    enemy.hitPoints <= 0 ? console.log(`${enemy.name} is dead!`) : console.log(`${enemy.name} has ${enemy.hitPoints} hit points left!`);
-  }
 };
 
 const fighter2 = {
   name: "Bigfoot",
   hitPoints: 17,
   maxDamage: 10,
-  attack: function () {
-    console.log(`${this.name} attacks!`);
-  }
 };
 
 const monster = {
@@ -108,6 +97,14 @@ const monster = {
 };
 
 // *********************************** // SEPARATE OUTPUT FROM LOGIC // *********************************** //
+// CONTROLLER AND VIEW OBJECTS ARE PART OF A DESIGN PATTERN CALLED MODEL-VIEW-CONTROLLER
+// MVC PATTERN for shorthand
+// INDUSTRY STANDARD FOR GAME DEVELOPMENT
+
+// CONTROLLER HAS METHODS THAT CONTROL EFFECTS ON GAME STATE
+// VIEW ALLOWS FOR SEPARATE CONCERNS OF DEVELOPMENT
+// PROGRAM LOGIC IS NOT DEPENDENT ON OUTPUT
+
 
 const controller = {
   attack: function (attacker, defender) {
@@ -127,3 +124,45 @@ const view = {
   }
 }
 // console.log(controller.attack(fighter, monster));
+
+function Goblin(name) {
+  this.name = name;
+  this.hitPoints = 8;
+  this.maxDamage = 6;
+}
+
+const goblinFactory = (name, hitPoints, maxDamage) => {
+  hitPoints = 8
+  maxDamage = 6
+  return { name, hitPoints, maxDamage };
+}
+
+const goblin11 = goblinFactory("goblin11");
+const goblin21 = goblinFactory("goblin21");
+const goblin31 =  goblinFactory("goblin31");
+
+const goblin1 = new Goblin("goblin1");
+const goblin2 = new Goblin("goblin2");
+const goblin3 = new Goblin("goblin3");
+
+// console.log(goblin1)
+// console.log(goblin2)
+// console.log(goblin3)
+// console.log(goblin11)
+// console.log(goblin21)
+// console.log(goblin31)
+
+const goblinArr = [goblin1,goblin2,goblin3,goblin11,goblin21,goblin31];
+
+// console.log(goblinArr.forEach(goblin => console.log(goblin.name)));
+// console.log(goblin11 === goblin21);
+// console.log(goblin1 === goblin2);
+
+const name = "Maynard";
+const color = "red";
+const number = 34;
+const food = "rice"
+console.log(name, color, number, food);
+console.log({name, color, number, food});
+
+
