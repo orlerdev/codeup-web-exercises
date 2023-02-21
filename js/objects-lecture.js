@@ -162,7 +162,30 @@ const name = "Maynard";
 const color = "red";
 const number = 34;
 const food = "rice"
-console.log(name, color, number, food);
-console.log({name, color, number, food});
+// console.log(name, color, number, food);
+// console.log({name, color, number, food});
+
+const factoryFunction = string => {
+  const capitalizeString = () => string.toUpperCase();
+  const printString = () => console.log(`----${capitalizeString()}----`);
+  return {printString}; // curly braces must be wrapped around a returned object
+}
+
+const taco = factoryFunction("taco");
+
+// printString(); // fails because it is scope locked within the scope of FactoryFunction
+// capitalizeString(); // fails because it is scope locked within the scope of FactoryFunction
+// taco.capitalizeString(); // fails because it is not returned by FactoryFunction, and is scope locked
+// taco.printString(); // succeeds because it is returned by FactoryFunction // captitalizString() is accessible by printString() and can be used by association
+
+const counterCreator = () => {
+  let count = 0;
+  return () => {
+    console.log(count);
+    count++;
+  }
+}
+
+const counter = counterCreator();
 
 

@@ -14,8 +14,13 @@
 
   const person = {
     firstName: "Jared",
-    lastName: "Orler"
+    lastName: "Orler",
+    sayHello: function () {
+      return `Hello ${this.firstName} ${this.lastName}`;
+    }
   };
+
+  console.log(person.sayHello());
 
   /**
    * TODO:
@@ -26,12 +31,6 @@
    * Example
    * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
    */
-
-  person.sayHello = function () {
-    return `Hello from ${this.firstName} ${this.lastName}!`;
-  };
-
-  console.log(person.sayHello());
 
   /** TODO:
    * HEB has an offer for the shoppers that buy products amounting to
@@ -47,28 +46,28 @@
    * and console.log the relevant messages for each person
    */
 
-  let shoppers = [
+  const shoppers = [
     { name: "Cameron", amount: 180 },
     { name: "Ryan", amount: 250 },
     { name: "George", amount: 320 }
   ];
 
-  const discount = (amount) => amount - (amount * .12);
-
   shoppers.forEach(shopper => {
-    let customer = shopper.name;
-    let total = shopper.amount;
-    let discount = shopper.amount - (shopper.amount * .12);
-    let formattedTotal = shopper.amount.toLocaleString("en-US", { style: "currency", currency: "USD" });
-    let formattedDiscount = discount.toLocaleString("en-US", { style: "currency", currency: "USD" });
-    total > 200 ? console.log(`${customer} spent ${formattedTotal}. Their new total is ${formattedDiscount}.`) : console.log(`${customer} spent ${formattedTotal}.`);
+    const discount = shopper.amount > 200 ? shopper.amount * .12 : 0;
+    const total = shopper.amount - discount;
+    console.log(`${shopper.name} -- total: ${formatCurrency(shopper.amount)}, discount: ${formatCurrency(discount)}, final total: ${formatCurrency(total)}`);
   });
 
   /** TODO:
    * Create an array of objects that represent books and store it in a
-   * variable named `books`. Each object should have a title and an author
+   * variable named `books`
+   . Each object should have a title and an author
    * property. The author property should be an object with properties
-   * `firstName` and `lastName`. Be creative and add at least 5 books to the
+   *
+   `firstName`
+   and
+   `lastName`
+   . Be creative and add at least 5 books to the
    * array
    *
    * Example:
@@ -79,13 +78,13 @@
 
   const books = [
     {
-      title: "It Starts With Us",
+      title: "Mexican Gothic",
       author: {
-        firstName: "Colleen",
-        lastName: "Hoover"
+        firstName: "Sylvia",
+        lastName: "Moreno"
       }
     }, {
-      title: "It Ends With Us",
+      title: "It Starts With Us",
       author: {
         firstName: "Colleen",
         lastName: "Hoover"
@@ -137,23 +136,28 @@
    */
 
   books.forEach((book, index) => {
-    console.log(`Book # ${index + 1}`);
+    console.log(`Book # ${index}`);
     console.log(`Title: ${book.title}`);
-    console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+    console.log(`Author: ${book.author.firstName} ${book.author.lastName} ---`);
   });
 
   /**
    * Bonus:
-   * - Create a function named `createBook` that accepts a title and author
+   * - Create a function named
+   `createBook`
+   that accepts a title and author
    *   name and returns a book object with the properties described
    *   previously. Refactor your code that creates the books array to instead
    *   use your function.
-   * - Create a function named `showBookInfo` that accepts a book object and
+   * - Create a function named
+   `showBookInfo`
+   that accepts a book object and
    *   outputs the information described above. Refactor your loop to use your
-   *   `showBookInfo` function.
+   *
+   `showBookInfo`
+   function.
    */
-
-  function createBook(title, author) {
+  const createBook = (title, author) => {
     let authorArray = author.split(" ");
 
     return {
@@ -163,23 +167,35 @@
         lastName: authorArray[1]
       }
     };
-  }
+  };
 
   const bonusBooks = [];
-  bonusBooks.push(createBook("It Starts With Us", "Colleen Hoover"));
-  bonusBooks.push(createBook("It Ends With Us", "Colleen Hoover"));
-  bonusBooks.push(createBook("Hell Bent", "Leigh Bardugo"));
-  bonusBooks.push(createBook("The House In The Pines", "Ana Reyes"));
-  bonusBooks.push(createBook("Tomorrow, and Tomorrow, and Tomorrow", "Garbrielle Zevin"));
 
-  function showBookInfo(book, index) {
-    console.log(`Book # ${index + 1}`);
-    console.log(`Title: ${book.title}`);
-    console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
-  }
+  const addBook = (arr, func) => {
+    arr.push(func);
+    return arr;
+  };
 
-bonusBooks.forEach((book, index) => {
-    showBookInfo(book, index);
-})
+  addBook(bonusBooks, createBook("Book One", "Author One"));
+  addBook(bonusBooks, createBook("Book Two", "Author Two"));
+  addBook(bonusBooks, createBook("Book Three", "Author Three"));
+  addBook(bonusBooks, createBook("Book Four", "Author Four"));
+  addBook(bonusBooks, createBook("Book Five", "Author Five"));
+  addBook(bonusBooks, createBook("Book Six", "Author Six"));
+  addBook(bonusBooks, createBook("Book Seven", "Author Seven"));
+  addBook(bonusBooks, createBook("Book Eight", "Author Eight"));
+  addBook(bonusBooks, createBook("Book Nine", "Author Nine"));
+  addBook(bonusBooks, createBook("Book Ten", "Author Ten"));
+
+  const showBookInfo = (arr) => {
+    return arr.forEach((book, index) => {
+      console.log(`BONUS QUESTION:
+    Book # ${index + 1}
+    Title: ${book.title}
+    Author: ${book.author.firstName} ${book.author.lastName}`);
+    });
+  };
+
+showBookInfo(bonusBooks);
 
 })();
