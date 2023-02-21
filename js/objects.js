@@ -27,11 +27,11 @@
    * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
    */
 
-  // person.sayHello = function () {
-  //   return `Hello from ${this.firstName} ${this.lastName}!`;
-  // };
+  person.sayHello = function () {
+    return `Hello from ${this.firstName} ${this.lastName}!`;
+  };
 
-  // console.log(person.sayHello());
+  console.log(person.sayHello());
 
   /** TODO:
    * HEB has an offer for the shoppers that buy products amounting to
@@ -47,22 +47,22 @@
    * and console.log the relevant messages for each person
    */
 
-  // let shoppers = [
-  //   { name: "Cameron", amount: 180 },
-  //   { name: "Ryan", amount: 250 },
-  //   { name: "George", amount: 320 }
-  // ];
-  //
-  // const discount = (amount) => amount - (amount * .12);
-  //
-  // shoppers.forEach(shopper => {
-  //   let customer = shopper.name;
-  //   let total = shopper.amount;
-  //   let discount = shopper.amount - (shopper.amount * .12);
-  //   let formattedTotal = shopper.amount.toLocaleString("en-US", { style: "currency", currency: "USD" });
-  //   let formattedDiscount = discount.toLocaleString("en-US", { style: "currency", currency: "USD" });
-  //   total > 200 ? console.log(`${customer} spent ${formattedTotal}. Their new total is ${formattedDiscount}.`) : console.log(`${customer} spent ${formattedTotal}.`);
-  // });
+  let shoppers = [
+    { name: "Cameron", amount: 180 },
+    { name: "Ryan", amount: 250 },
+    { name: "George", amount: 320 }
+  ];
+
+  const discount = (amount) => amount - (amount * .12);
+
+  shoppers.forEach(shopper => {
+    let customer = shopper.name;
+    let total = shopper.amount;
+    let discount = shopper.amount - (shopper.amount * .12);
+    let formattedTotal = shopper.amount.toLocaleString("en-US", { style: "currency", currency: "USD" });
+    let formattedDiscount = discount.toLocaleString("en-US", { style: "currency", currency: "USD" });
+    total > 200 ? console.log(`${customer} spent ${formattedTotal}. Their new total is ${formattedDiscount}.`) : console.log(`${customer} spent ${formattedTotal}.`);
+  });
 
   /** TODO:
    * Create an array of objects that represent books and store it in a
@@ -136,11 +136,11 @@
    *      ...
    */
 
-  // books.forEach((book, index) => {
-  //   console.log(`Book # ${index + 1}`);
-  //   console.log(`Title: ${book.title}`);
-  //   console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
-  // });
+  books.forEach((book, index) => {
+    console.log(`Book # ${index + 1}`);
+    console.log(`Title: ${book.title}`);
+    console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+  });
 
   /**
    * Bonus:

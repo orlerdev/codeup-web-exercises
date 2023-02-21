@@ -3,15 +3,15 @@ const currentWeather = {
   humidity: 28,
   clouds: 0,
   windDirection: "NNE"
-}
+};
 // console.log(currentWeather.temperature); // dot notation // cannot use variables
 // console.log(currentWeather["temperature"]); // bracket notation // can use variables
 
 function displayWeatherProperty(prop) {
   // console.log(currentWeather[prop]);
 }
-// console.log(displayWeatherProperty("humidity"));
 
+// console.log(displayWeatherProperty("humidity"));
 
 for (let prop in currentWeather) {
   // console.log(prop);
@@ -65,13 +65,65 @@ for (let forecast of hourlyWeather) {
 // hourlyWeather.forEach(hourlyForecast => console.log(hourlyForecast.time));
 
 hourlyWeather.forEach(hourlyForecast => {
-   console.log(Object.entries(hourlyForecast));
-})
+  // console.log(Object.entries(hourlyForecast));
+});
 
 // DESTRUCTURING THE OBJECT
 hourlyWeather.forEach(({ time, temperature, feels_like }) => {
   // console.log(`At ${time} it will be ${temperature} degrees, but it will feel like ${feels_like} degrees.`)
 });
 
-const date1 = new Date((Date.UTC(2023, 02, 17, 3, 0, 0)));
+const date1 = new Date((Date.UTC(2023, 2, 17, 3, 0, 0)));
 // console.log(date1.toLocaleString("en-US"));
+
+// OBJECTS <things it "is" | properties> && <things it "does" | methods> //
+
+const fighter = {
+  name: "Arata",
+  hitPoints: 18,
+  maxDamage: 8,
+  attack: function (enemy) {  // Method <function within an object //
+    console.log(`${enemy.name} has ${enemy.hitPoints} hit points.`);
+    console.log(`${this.name} attacks!`);
+    const damage = Math.ceil(Math.random() * this.maxDamage);
+    console.log(`${this.name} does ${damage} points of damage!`);
+    enemy.hitPoints -= damage;
+    enemy.hitPoints <= 0 ? console.log(`${enemy.name} is dead!`) : console.log(`${enemy.name} has ${enemy.hitPoints} hit points left!`);
+  }
+};
+
+const fighter2 = {
+  name: "Bigfoot",
+  hitPoints: 17,
+  maxDamage: 10,
+  attack: function () {
+    console.log(`${this.name} attacks!`);
+  }
+};
+
+const monster = {
+  name: "Goblin",
+  hitPoints: 8,
+  maxDamage: 6
+};
+
+// *********************************** // SEPARATE OUTPUT FROM LOGIC // *********************************** //
+
+const controller = {
+  attack: function (attacker, defender) {
+    const startingHp = defender.hitPoints;
+    const damage = Math.ceil(Math.random() * attacker.maxDamage);
+    defender.hitPoints -= damage;
+    view.displayAttackResults(attacker.name, defender.name, startingHp, defender.hitPoints, damage,)
+  }
+};
+
+const view = {
+  displayAttackResults: function(attackerName, defenderName, hpBeforeAttack, hpAfterAttack, damage) {
+    console.log(`${defenderName} has ${hpBeforeAttack} hit points.`);
+    console.log(`${attackerName} attacks!`);
+    console.log(`${attackerName} does ${damage} hit points!`);
+    hpAfterAttack <= 0 ? console.log(`${attackerName} has defeated ${defenderName}!`) : console.log(`${defenderName} has ${hpAfterAttack} hit points left!`);
+  }
+}
+// console.log(controller.attack(fighter, monster));
