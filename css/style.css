@@ -24,12 +24,11 @@ body {
     height: 100vh;
     width: 100vw;
     margin: 0;
-    padding: 20px;
+    color: antiquewhite;
 }
 
 .layer {
-    background-color: rgba(248, 247, 216, 0.7);
-    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
     width: 100%;
@@ -39,11 +38,11 @@ body {
 header, footer {
     background-color: #f1f1f1;
     padding: 20px 20px 0 20px;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid antiquewhite;
 }
 
 footer {
-    border-top: 1px solid #000000;
+    border-top: 1px solid antiquewhite;
 }
 
 footer p {
@@ -61,7 +60,7 @@ li {
 
 a {
     text-decoration: none;
-    color: #000;
+    color: #706e6e;
 }
 
 a:hover, a:visited {
@@ -78,7 +77,7 @@ a:hover, a:visited {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: darkslateblue;
+    color: #8c8cea;
     text-decoration: underline;
     font-family: "Source Code Pro", monospace, sans-serif;
 }
@@ -87,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 .features-container {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid antiquewhite;
 }
 
 .photos-wrapper {
@@ -136,7 +135,7 @@ h2 {
 }
 
 .third-section{
-    background-color: #2c2a21;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     color: antiquewhite;
 }
@@ -150,5 +149,9 @@ table {
 
 table th {
     font-size: larger;
+}
+
+.text-center {
+    text-align: center;
 }
 
