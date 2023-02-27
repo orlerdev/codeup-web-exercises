@@ -1,0 +1,26 @@
+body {
+    color: white;
+    background: #2c2a21;
+    line-height: 1.7em;
+    font-family: "MonoLisa Script", sans-serif;
+    font-weight: lighter;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+a {
+    /*display: block;*/
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+a:visited {
+    color: antiquewhite;
+}
+
+blockquote {
+    background: #4d4d4d;
+}

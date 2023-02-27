@@ -1,0 +1,48 @@
+body {
+    color: white;
+    background: #2c2a21;
+    line-height: 1.7em;
+    font-family: "MonoLisa", sans-serif;
+    font-weight: lighter;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+a {
+    /*display: block;*/
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+a:visited {
+    color: antiquewhite;
+}
+
+p {
+    text-align: center;
+    text-decoration: initial;
+}
+
+.red-paragraph {
+    color: #f83e3e;
+    font-style: italic;
+}
+
+.blue-paragraph {
+    color: #5d5dee;
+    font-weight: bold;
+}
+
+.yellow-paragraph {
+    color: #f3f34d;
+    font-style: italic;
+}
+
+.yellow-paragraph:hover {
+    font-size: xx-large;
+    line-height: 1.5em;
+}
+

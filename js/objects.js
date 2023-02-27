@@ -159,7 +159,6 @@
    */
   const createBook = (title, author) => {
     let authorArray = author.split(" ");
-
     return {
       title: title,
       author: {
@@ -196,6 +195,6 @@
     });
   };
 
-showBookInfo(bonusBooks);
+  showBookInfo(bonusBooks);
 
 })();
