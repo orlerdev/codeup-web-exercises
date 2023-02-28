@@ -17,6 +17,8 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Reapply the pointer cursor for anchor tags */
@@ -31,6 +33,7 @@ ol, ul, menu {
 
 /* For images to not be able to exceed their container */
 img {
+    display: block;
     max-inline-size: 100%;
     max-block-size: 100%;
 }
@@ -91,9 +94,4 @@ meter {
 /* apply back the draggable feature - exist only in Chromium and Safari */
 :where([draggable="true"]) {
     -webkit-user-drag: element;
-}
-
-/* Revert Modal native behavior */
-:where(dialog:modal) {
-    all: revert;
 }
