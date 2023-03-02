@@ -35,7 +35,7 @@ ul, ol, menu {
 
 /*ANCHOR LINK RESETS*/
 a, a:visited {
-    color: inherit;
+    color: unset;
     text-decoration: none;
 }
 

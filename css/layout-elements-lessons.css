@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root {
+    --main-color: #444444;
+    --secondary-color: #d0d0d0;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+.logo {
+    padding: 20px;
+    max-height: 80%;
+}
+
+nav {
+    color: grey;
+}
+
+button {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 2px var(--main-color);
+}
+
+.hero {
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    height: 50vh;
+}
+
+.hero-row {
+    height: 80%;
+}
+
+.hero-text {
+    padding: 40px;
+}
+
+.hero-text h1 {
+    font-size: xx-large;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.icon {
+    background-color: var(--main-color);
+    height: 440px;
+    max-height: 80%;
+    width: 550px;
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px var(--main-color);
+}
+
+section.features {
+    padding: 40px;
+}
+
+.features-text {
+    color: var(--secondary-color);
+}
+
+.features-text h2 {
+    color: var(--main-color)
+}
+
+.features-text p {
+    color: var(--main-color);
+}
+
+.feature-cards {
+    height: 100%;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    flex: 1 0 0;
+    padding: 20px;
+    height: 100%;
+}
+
+.feature-card h3 {
+    margin: 10px;
+}
+
+.feature-card p {
+    margin: 10px;
+}
+
+.features img {
+    aspect-ratio: 1/1;
+    height: 20px;
+    object-fit: contain;
+    object-position: center;
+    background-repeat: no-repeat;
+    margin: 10px;
+}

@@ -27,7 +27,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    width: 100vw;
+    max-width: 100%;
     margin: 0;
     color: antiquewhite;
 }
@@ -60,6 +60,7 @@ header {
     padding: 20px 20px 0 20px;
     border-bottom: 1px solid antiquewhite;
     transition: all ease-in-out 1s;
+    max-width: 100%;
 }
 
 header:hover {
@@ -72,7 +73,7 @@ header p {
 }
 
 header .first-span {
-    transition: all ease-in-out .8s .8s;
+    transition: all ease-in-out .8s .1s;
 }
 
 header:hover .first-span {
@@ -80,7 +81,7 @@ header:hover .first-span {
 }
 
 header .second-span {
-    transition: all ease-in-out 1.3s .8s;
+    transition: all ease-in-out 1.3s .1s;
 }
 
 header:hover .second-span {
@@ -88,7 +89,7 @@ header:hover .second-span {
 }
 
 header .third-span {
-    transition: all ease-in-out 1.8s .8s;
+    transition: all ease-in-out 1.8s .1s;
 }
 
 header:hover .third-span {
@@ -96,7 +97,7 @@ header:hover .third-span {
 }
 
 header .fourth-span {
-    transition: all ease-in-out 2.3s .8s;
+    transition: all ease-in-out 2.3s .1s;
 }
 
 header:hover .fourth-span {
@@ -109,6 +110,10 @@ footer {
     border-top: 1px solid antiquewhite;
     padding: 20px;
     transition: all ease-in-out 1s;
+}
+
+footer:hover {
+    background-color: var(--solid-overlay);
 }
 
 footer p {
@@ -141,6 +146,8 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     border-bottom: 1px solid antiquewhite;
     transition: all ease-in-out 1s;
+    max-width: 100%;
+    padding: 20px;
 }
 
 .features-container:hover {
