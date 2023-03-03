@@ -4,6 +4,12 @@
     with more flexibility than the body tag.
 */
 /*                                                                                                                                                     */
+:root {
+    --col-border: 2px solid dodgerblue;
+    --row-border: 2px solid firebrick;
+    --content-border: 2px solid lawngreen;
+    }
+
 .page-wrapper {
     min-height: 100vh;
 }
@@ -31,8 +37,8 @@
     justify-content: center;
 }
 
-.container.justify-center {
-
+.container.align-center {
+    align-items: center;
 }
 
 /*
@@ -126,4 +132,12 @@
 .column.justify-space-between {
     justify-content: space-between;
 }
+
+.align-start {
+    align-items: start;
+    }
+
+.align-end {
+    align-items: end;
+    }
 

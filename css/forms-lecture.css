@@ -1,0 +1,16 @@
+body {
+    padding: 20px;
+    }
+
+form {
+    padding: 10px;
+    }
+
+input {
+    padding: 5px;
+    background-color: #d5d5d5;
+    }
+
+label {
+    padding: 5px;
+    }

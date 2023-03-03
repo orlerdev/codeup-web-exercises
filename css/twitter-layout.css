@@ -1,0 +1,47 @@
+.page-wrapper {
+    min-height: 100vh;
+    }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border: var(--col-border);
+    }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    border: var(--row-border);
+    }
+
+.row-rev {
+    flex-direction: row-reverse;
+    border: var(--row-border);
+    }
+
+.col {
+    display: flex;
+    flex-direction: column;
+    border: var(--col-border);
+    }
+
+.col-rev {
+    flex-direction: column-reverse;
+    border: var(--col-border);
+    }
+
+.content {
+    border: var(--content-border);
+    }
+
+.justify-start {
+    justify-content: start;
+    }
+
+.justify-center {
+    justify-content: center;
+    }
+
+.justify-end {
+    justify-content: end;
+    }\]
