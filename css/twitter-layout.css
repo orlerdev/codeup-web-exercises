@@ -1,16 +1,29 @@
+:root {
+    --col-border: 2px solid dodgerblue;
+    --row-border: 2px solid firebrick;
+    --content-border: 2px solid lawngreen;
+    }
+
 .page-wrapper {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     }
 
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
     border: var(--col-border);
     }
 
 .row {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    max-width: 1100px;
+    gap: 20px;
+    padding: 0 20px;
     border: var(--row-border);
     }
 
@@ -22,6 +35,7 @@
 .col {
     display: flex;
     flex-direction: column;
+    flex: 1 0 0;
     border: var(--col-border);
     }
 
@@ -44,4 +58,4 @@
 
 .justify-end {
     justify-content: end;
-    }\]
+    }
