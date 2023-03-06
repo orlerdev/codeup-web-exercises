@@ -9,16 +9,14 @@
  **/
 
 function convertAddressToObject(address) {
-  let arr = address.split(" ");
-  let streetNum = arr[0];
-  let streetName = `${arr[1]} ${arr[2]}`;
-  return { streetNumber: streetNum, streetName: streetName}
-  }
-
+    let arr = address.split(" ");
+    let streetNum = arr[0];
+    let streetName = `${arr[1]} ${arr[2]}`;
+    return { streetNumber: streetNum, streetName: streetName };
+}
 
 // console.log(convertAddressToObject("8646 Sunny Oaks"));
 // console.log(convertAddressToObject("5408 Villa Nueva"));
-
 
 /**
  * Count total pets
@@ -35,14 +33,13 @@ function convertAddressToObject(address) {
 
 const totalPets = (petOwners) => {
     let total = 0;
-  petOwners.forEach(person => {
-    return total += person.pets;
-  })
-  return total;
-}
+    petOwners.forEach(person => {
+        return total += person.pets;
+    });
+    return total;
+};
 
 // console.log(totalPets([{name: 'Fernando Mendoza', pets: 1}, {name: 'Douglas Hirsh', pets: 8}, {name: 'Kenneth Howell', pets: 2}]));
-
 
 /**
  * Find the Smallest and Biggest Numbers
@@ -61,12 +58,11 @@ const minMax = (arr) => {
     let min = Math.min(...arr);
     let max = Math.max(...arr);
     return [min, max];
-}
+};
 
 // console.log(minMax([1, 2, 3, 4, 5]));
 // console.log(minMax([2334454, 5]));
 // console.log(minMax([1]));
-
 
 /**
  * Drink Sorting
@@ -84,12 +80,177 @@ const minMax = (arr) => {
  */
 
 drinks = [
-  {name: "lemonade", price: 50},
-  {name: "lime", price: 10}
-]
+    { name: "lemonade", price: 50 },
+    { name: "lime", price: 10 }
+];
 
 const sortDrinksByPrice = (drinks) => {
-  return drinks.sort((a, b) => a.price - b.price);
+    return drinks.sort((a, b) => a.price - b.price);
+};
+
+// console.log(sortDrinksByPrice(drinks));
+
+/*
+* Console log the name of each city.
+* Console log the name of the name and state.
+* Console log all the cities in Texas with a population of over 1 million.
+* */
+
+const cities = [
+    {
+        name: "New York City",
+        state: "New York",
+        population: 8336817
+    },
+    {
+        name: "Los Angeles",
+        state: "California",
+        population: 3979576
+    },
+    {
+        name: "Chicago",
+        state: "Illinois",
+        population: 2693976
+    },
+    {
+        name: "Houston",
+        state: "Texas",
+        population: 2320268
+    },
+    {
+        name: "Phoenix",
+        state: "Arizona",
+        population: 1680992
+    },
+    {
+        name: "Philadelphia",
+        state: "Pennsylvania",
+        population: 1584064
+    },
+    {
+        name: "San Antonio",
+        state: "Texas",
+        population: 1547253
+    },
+    {
+        name: "San Diego",
+        state: "California",
+        population: 1423851
+    },
+    {
+        name: "Dallas",
+        state: "Texas",
+        population: 1343573
+    },
+    {
+        name: "San Jose",
+        state: "California",
+        population: 1030119
+    },
+    {
+        name: "Austin",
+        state: "Texas",
+        population: 964254
+    },
+    {
+        name: "Jacksonville",
+        state: "Florida",
+        population: 903889
+    },
+    {
+        name: "Fort Worth",
+        state: "Texas",
+        population: 895008
+    },
+    {
+        name: "Columbus",
+        state: "Ohio",
+        population: 892533
+    },
+    {
+        name: "San Francisco",
+        state: "California",
+        population: 883305
+    },
+    {
+        name: "Charlotte",
+        state: "North Carolina",
+        population: 885708
+    },
+    {
+        name: "Indianapolis",
+        state: "Indiana",
+        population: 876384
+    },
+    {
+        name: "Seattle",
+        state: "Washington",
+        population: 753675
+    },
+    {
+        name: "Denver",
+        state: "Colorado",
+        population: 727211
+    },
+    {
+        name: "Washington",
+        state: "District of Columbia",
+        population: 702455
+    }
+];
+
+const cityName = (arr) => {
+    arr.forEach(city => {
+        console.log(city.name);
+    });
+};
+
+const cityNameAlt = (arr) => arr.map(city => city.name);
+
+console.log(cityNameAlt(cities));
+
+const nameAndState = (arr) => {
+    arr.forEach(city => {
+        console.log(`${city.name}, ${city.state}`);
+    });
+};
+
+const overOneMil = (arr) => {
+    console.log(arr.filter(city => city.population > 1000000 && city.state === "Texas").map(city => city.name));
+};
+
+// for (let i = 0; i < cities.length; i++) {
+//     if (cities[i].population > 1000000 && cities[i].state === "Texas")
+//     console.log(`${cities[i].name}, ${cities[i].state}`);
+// }
+
+const isInTexas = (arr) => arr.state === "Texas" && arr.population > 1000000;
+
+const overOneMilAlt = (arr) => console.log(arr.filter(isInTexas).map(city => `${city.name}, ${city.state}`));
+
+overOneMilAlt(cities)
+
+
+// cityName(cities);
+// nameAndState(cities);
+// overOneMil(cities);
+
+const budgets = [
+    { name: "John", age: 21, budget: 23000 },
+    { name: "Steve", age: 32, budget: 40000 },
+    { name: "Martin", age: 16, budget: 2700 }
+];
+
+
+const getBudgets = (arr) => {
+    return arr.reduce((acc, curr) => {
+        return acc + curr.budget;
+    }, 0);
 }
 
-console.log(sortDrinksByPrice(drinks));
+const getBudgetsAlt = (arr) => {
+    return arr.reduce((total, person) => total + person.budget, 0)
+}
+
+// console.log(getBudgets(budgets));
+// console.log(getBudgetsAlt(budgets));
