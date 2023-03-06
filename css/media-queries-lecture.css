@@ -1,0 +1,35 @@
+.box {
+    width: 100%;
+    height: 200px;
+    background-color: lightgrey;
+    border: 1px solid #000;
+}
+
+@media screen and (max-width: 992px) {
+    .box {
+        background-color: blue;
+    }
+
+    .features .row {
+        flex-wrap: wrap;
+    }
+
+    .features .row .column {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+/* Changes the following properties at the defined max-width */
+@media screen and (max-width: 768px) {
+    .box {
+        background-color: red;
+    }
+    .features .row {
+        flex-direction: column;
+        flex-wrap: unset;
+    }
+    .features .row .column {
+        flex-basis: unset;
+    }
+}
+

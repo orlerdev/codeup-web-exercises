@@ -31,6 +31,7 @@ p, h1, h2, h3, h4, h5, h6 {
 /*RESET LIST STYLES*/
 ul, ol, menu {
     list-style: none;
+    padding-left: unset;
 }
 
 /*ANCHOR LINK RESETS*/

@@ -16,22 +16,19 @@
 
     <form action="https://request-inspector.glitch.me" method="POST">
 
-        <fieldset>
-            <legend>Personal Information</legend>
+        <div>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Username:" autofocus required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Password:" required>
-        </fieldset>
+        </div>
 
-        <fieldset>
-            <legend>Tell us about yourself</legend>
+        <div>
             <label for="bio"></label>
             <textarea name="bio" id="bio" cols="100" rows="10"></textarea>
-        </fieldset>
+        </div>
 
-        <fieldset>
-            <legend>How did you hear about us?</legend>
+        <div>
             <input type="radio" name="about-us" id="billboard" value="billboard">
             <label for="billboard">Billboard</label>
 
@@ -43,9 +40,8 @@
 
             <input type="radio" name="about-us" id="other" value="other">
             <label for="other">Other</label>
-        </fieldset>
-        <fieldset>
-            <legend>What browser are you using?</legend>
+        </div>
+        <div>
             <label for="user-browser">Which browser are you using?</label>
             <select name="user-browser" id="user-browser">
                 <option value="chrome">Chrome</option>
@@ -53,7 +49,7 @@
                 <option value="safari">Safari</option>
                 <option value="other-browser">Other</option>
             </select>
-        </fieldset>
+        </div>
         <button type="submit">Submit Your Info</button>
     </form>
 </div>
