@@ -23,6 +23,14 @@ main {
     flex: 1 0 0;
 }
 
+.main-left {
+    flex: 2;
+}
+
+.main-right {
+    flex: 1;
+}
+
 .nav-links {
     flex: 1 0 0;
     align-items: center;
@@ -40,7 +48,7 @@ main {
     gap: 25px;
 }
 
-@media screen and (max-width: 435px) {
+@media screen and (max-width: 660px) {
     .alert-info {
         display: flex;
         flex-direction: column;
@@ -48,6 +56,12 @@ main {
         width: 100%;
         background: #cdffff;
         border: 2px solid grey;
+    }
+
+    .alert-info a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
         padding: 5px 30px;
     }
 
@@ -78,4 +92,5 @@ main {
     main .row {
         flex-direction: column;
     }
+
 }

@@ -114,7 +114,11 @@
     justify-content: space-between;
     }
 
-.justify-start {
+.column.justify-end {
+    justify-content: end;
+}
+
+.column.justify-start {
     justify-content: start;
 }
 

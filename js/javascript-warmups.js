@@ -207,7 +207,7 @@ const cityName = (arr) => {
 
 const cityNameAlt = (arr) => arr.map(city => city.name);
 
-console.log(cityNameAlt(cities));
+// console.log(cityNameAlt(cities));
 
 const nameAndState = (arr) => {
     arr.forEach(city => {
@@ -228,7 +228,7 @@ const isInTexas = (arr) => arr.state === "Texas" && arr.population > 1000000;
 
 const overOneMilAlt = (arr) => console.log(arr.filter(isInTexas).map(city => `${city.name}, ${city.state}`));
 
-overOneMilAlt(cities)
+// overOneMilAlt(cities)
 
 
 // cityName(cities);
@@ -254,3 +254,42 @@ const getBudgetsAlt = (arr) => {
 
 // console.log(getBudgets(budgets));
 // console.log(getBudgetsAlt(budgets));
+
+/* KEYWORD CIPHER
+* create a function which takes 2 parameters (string, keyword)
+* remove any characters within the keyword which occur more than once
+* the rest of the alphabet that does not occur within the keyword follow the keyword
+* the cipher output is then ran against the regular alphabet and returns the value of the letter as it appears in the regular alphabet to what it is in the cipher.
+*
+* const cipher = (hello, wednesday) => {
+*   let alphaBet = abcdefghijklmnopqrstuvwxyz;
+*   let cipherAlphabet = wednsaybcfghijklmopqrtuvwxyz;
+*
+*   'h' = 'b'
+*   'e' = 's'
+*   'l' = 'h'
+*   'l' = 'h'
+*   'o' = 'k'
+*
+* }
+* */
+
+function keywordCipher(string, keyword) {
+    const letter = "abcdefghijklmnopqrstuvwxyz";
+    const newKey = [...new Set(keyword + letter)]
+    return string.toLowerCase().replace(/[a-z]/g, x => newKey[letter.indexOf(x)])
+}
+
+// function keywordCipher1(str, keyword) {
+//     const encryptKey = [...new Set(keyword + "abcdefghijklmnopqrstuvwxyz")];
+//     return str.toLowerCase().replace(/[a-z]/g, (l) => encryptKey[l.charCodeAt() - 97]);
+// }
+
+// function keywordCipher2(str, keyword) {
+//     const encryptKey = new Map(Array.from(new Set(keyword + "abcdefghijklmnopqrstuvwxyz"), (l, i) => [String.fromCharCode(97 + i), l]))
+//     return str.replace(/\w/g, l => encryptKey.get(l.toLowerCase()))
+// }
+
+// console.log(keywordCipher("hello", "wednesday"));
+// console.log(keywordCipher1("hello", "wednesday"));
+// console.log(keywordCipher2("hello", "wednesday"));
