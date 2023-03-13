@@ -12,6 +12,28 @@ const isDateValid = (date) => {
   return !Number.isNaN(date.getTime());
 };
 
+//--    ARRAY OF OBJECTS: STRING SORT FUNCTION USING localeCompare()  --//
+// const sortedList = moreCars.sort((a, b) => a.make.localeCompare(b.make));
+//--    USING sort()  --//
+const sortedCars = (arr) => {
+  return arr.sort((a, b) => {
+    const el1 = a.make
+    const el2 = b.make
+    if (el1 < el2) {
+      return -1;
+    } else if (el1 > el2) {
+      return 1;
+    } else {
+      return 0;
+    }
+  })
+}
+
+
+//--    NUMERICAL SORTING ARRAY CHECK  --//
+//--    THIS IS ONLY FOR CHECKING THAT THE ARRAY IS CORRECTLY SORTED  --//
+const sortedNumberArray = (array) => array.slice(1).every((element, index) => element >= array[index])
+
 // *TODO: Date Reformatting
 function reformatDate(date) {
   let today = new Date();
@@ -234,10 +256,11 @@ range(0, 10, 1);
 range(0, 20, 2);
 // [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
-// GENERATE THE ALPHABET
+//--      --////--    ALPHABET ARRAY  --////--      --//
 let alpha = range("A".charCodeAt(0), "Z".charCodeAt(0), 1).map(x => String.fromCharCode(x));
 // ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
+//--      --////--    RANDOM NUMBER ARRAY GENERATOR WITH RANGE  --////--      --//
 let randomNumberArray = (size) => {
   return range(0, size, 1).map(x => randomNumber(0, 100));
 }
@@ -255,7 +278,24 @@ let randNumArr = (arraySize) => {
   return array;
 }
 
-// GENERATE THE ALPHABET IN REVERSE ORDER
+//--      --////--    KEYWORD CIPHERS  --////--      --//
+function keywordCipher(string, keyword) {
+  const letter = "abcdefghijklmnopqrstuvwxyz";
+  const newKey = [...new Set(keyword + letter)]
+  return string.toLowerCase().replace(/[a-z]/g, x => newKey[letter.indexOf(x)])
+}
+
+function keywordCipher1(str, keyword) {
+  const encryptKey = [...new Set(keyword + "abcdefghijklmnopqrstuvwxyz")];
+  return str.toLowerCase().replace(/[a-z]/g, (l) => encryptKey[l.charCodeAt() - 97]);
+}
+
+function keywordCipher2(str, keyword) {
+  const encryptKey = new Map(Array.from(new Set(keyword + "abcdefghijklmnopqrstuvwxyz"), (l, i) => [String.fromCharCode(97 + i), l]))
+  return str.replace(/\w/g, l => encryptKey.get(l.toLowerCase()))
+}
+
+//--      --////--    GENERATE THE ALPHABET IN REVERSE ORDER  --////--      --//
 let alphaReverse = range("Z".charCodeAt(0), "A".charCodeAt(0), 1).map(x => String.fromCharCode(x));
 
 // GENERATE UNORDERED LIST FROM ARRAY
