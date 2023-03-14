@@ -301,6 +301,8 @@ let alphaReverse = range("Z".charCodeAt(0), "A".charCodeAt(0), 1).map(x => Strin
 // GENERATE UNORDERED LIST FROM ARRAY
 const arrayToUnorderedList = (array) => `<ul>\n\t<li> ${array.join(`</li>\n\t<li>`)} </li>\t\n</ul>`;
 
+
+
 // })();
 
 
