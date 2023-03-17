@@ -34,9 +34,21 @@
 <script src="../js/utils.js"></script>
 <!--<script src="../js/jquery-exercise.js"></script>-->
 <script>
-    $("h1").click(function() {
+    $("h1").click(function () {
         $("h1").css("background-color", "goldenrod");
     });
+    $("p").dblclick(function () {
+        $("p").css("font-size", "18px");
+    });
+    $("li").hover(function () {
+        $(this).mouseenter(function () {
+            $("li").css("color", "red");
+        });
+        $(this).mouseleave(function () {
+            $("li").css("color", "black");
+        });
+    });
+
 </script>
 
 </body>
