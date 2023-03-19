@@ -120,7 +120,7 @@
 }
 
 .title-blackout {
-    display: inline-block;
+    display: none;
     position: absolute;
     /***********  1P BLINK POSITION  ***********/
     bottom: 318px;
@@ -143,9 +143,9 @@
 .selection-icon {
     position: absolute;
     /***********  CURSOR AT 1P  ***********/
-    /* bottom: 270px; */
+    bottom: 270px;
     /***********  CURSOR AT 2P  ***********/
-    bottom: 208px;
+    /* bottom: 208px; */
     left: 110px;
     height: 110px;
     width: 115px;
