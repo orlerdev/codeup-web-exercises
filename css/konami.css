@@ -1,0 +1,152 @@
+
+
+.page-wrapper {
+    background: black;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    flex: 1;
+}
+
+.hide {
+    display: none;
+}
+
+.background-wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+/***********  JUNGLE LEVEL STYLING  ***********/
+.jungle-level-background {
+    /* display: flex; */
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.konami-code-success {
+    /* display: inline-flex; */
+    position: relative;
+    background: url("../assets/img/konami_success.png");
+    height: 300px;
+    width: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.arrows {
+    /* display: inline-flex; */
+    position: absolute;
+    bottom: 35px;
+    left: 197px;
+    height: 45px;
+}
+
+.youditit {
+    /* display: inline-flex; */
+    position: absolute;
+    bottom: 35px;
+    left: 197px;
+    height: 45px;
+}
+
+/***********  JUNGLE LEVEL STARTER  ***********/
+.jungle-level-background {
+    width: 100%;
+    height: 100%;
+}
+
+/***********  SINGLE PLAYER  ***********/
+.jungle-load-1p-full {
+    width: 100%;
+    height: 100%;
+}
+
+.jungle-load-1p-none {
+    width: 100%;
+    height: 100%;
+
+}
+
+/***********  2PLAYER  ***********/
+.jungle-load-2p-full {
+    width: 100%;
+    height: 100%;
+}
+
+.jungle-load-2p-none {
+    width: 100%;
+    height: 100%;
+}
+
+/***********  SINGLE PLAYER W/ CODE  ***********/
+.jungle-load-1p30-full {
+    width: 100%;
+    height: 100%;
+}
+
+.jungle-load-1p30-none {
+    width: 100%;
+    height: 100%;
+}
+
+/***********  2PLAYER W/ CODE  ***********/
+.jungle-load-2p30-full {
+    width: 100%;
+    height: 100%;
+}
+.jungle-load-2p30-none {
+    width: 100%;
+    height: 100%;
+}
+
+/***********  TITLE SCREEN STARTER  ***********/
+.title-starter {
+    display: flex;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("../assets/img/title_screen_onLoad.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title-blackout {
+    display: inline-block;
+    position: absolute;
+    /***********  1P BLINK POSITION  ***********/
+    bottom: 318px;
+    /***********  2P BLINK POSITION  ***********/
+    /* bottom: 260px; */
+    left: 241px;
+    background: black;
+    min-height: 60px;
+    min-width: 400px;
+}
+
+.characters {
+    position: absolute;
+    right: 67px;
+    bottom: 245px;
+    max-height: 450px;
+    max-width: 450px;
+}
+
+.selection-icon {
+    position: absolute;
+    /***********  CURSOR AT 1P  ***********/
+    /* bottom: 270px; */
+    /***********  CURSOR AT 2P  ***********/
+    bottom: 208px;
+    left: 110px;
+    height: 110px;
+    width: 115px;
+}

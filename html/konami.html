@@ -4,30 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/konami.css">
     <link rel="stylesheet" href="https://kit.fontawesome.com/a470e83216.css" crossorigin="anonymous">
     <title>Konami Code</title>
 </head>
-
 <body>
-<h1>Konami Code</h1>
+<div class="page-wrapper">
+    <div class="container">
+        <div class="row grow no-padding no-gap">
+            <div class="column background-wrapper">
+                <div class="jungle-level-background hide">
+                    <div class="konami-code-success">
+                        <div class="arrows">
+                            <img src="../assets/img/konami_success_arrows.png" alt="">
+                        </div>
+                        <div class="youditit">
+                            <img src="../assets/img/konami_success_youdidit.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="jungle-load-1p-full hide">
+                    <img src="../assets/img/jungle_load_1p_full.png" alt="">
+                </div>
+                <div class="jungle-load-1p-none hide">
+                    <img src="../assets/img/jungle_load_1p_none.png" alt="">
+                </div>
+                <div class="jungle-load-2p-full hide">
+                    <img src="../assets/img/jungle_load_2p_full.png" alt="">
+                </div>
+                <div class="jungle-load-2p-none hide">
+                    <img src="../assets/img/jungle_load_2p_none.png" alt="">
+                </div>
+                <div class="jungle-load-1p-30-full hide">
+                    <img src="../assets/img/jungle_load_1p30_full.png" alt="">
+                </div>
+                <div class="jungle-load-1p-30-none hide">
+                    <img src="../assets/img/jungle_load_1p30_none.png" alt="">
+                </div>
+                <div class="jungle-load-2p-30-full hide">
+                    <img src="../assets/img/jungle_load_2p30_full.png" alt="">
+                </div>
+                <div class="jungle-load-2p-30-none hide">
+                    <img src="../assets/img/jungle_load_2p30_none.png" alt="">
+                </div>
+                <div class="blacked-out"></div>
+                <div class="title-starter">
+                    <div class="title-blackout"></div>
+                    <img src="../assets/img/characters_img.jpg" alt="" class="characters">
+                    <img src="../assets/img/player_select_icon_improved.png" alt="" class="selection-icon">
+                    <img class="hide" src="../assets/img/title_screen_onTransition.jpg" alt="">
+                </div>
+                <div class="title-full-player1"></div>
+                <div class="title-full-2player"></div>
+                <div class="game-over-continue"></div>
+                <div class="game-over-end"></div>
+                <div class="selection-icon"></div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- SCRIPTS -->
 <script src="../js/jquery-3.6.4.js"></script>
 <script src="../js/utils.js"></script>
-<script>
-    //--      --////--    KONAMI CODE  --////--      --//
-    // UP, UP, DOWN, DOWN, LEFT, RIGHT, LEFT, RIGHT, 'B', 'A'
-    //  TODO: save code in an array?
-        // this would allow for easy matching
-
-
-    //  TODO: format the char inputs with .toLowerCase() method
-    // ALLOW USER TO ENTER CODE WITH THE ENTER KEY TO SUBMIT IT
-    //  TODO: add eventListener to the <return> key
-
-
-    // alert("You have added 30 lives!") IF CODE IS ENTERED CORRECTLY
-
-</script>
+<script src="../js/konami.js"></script>
 </body>
 </html>
-
