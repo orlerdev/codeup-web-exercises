@@ -1,5 +1,6 @@
 const $dd = $('dd');
 const $dt = $('dt');
+const $highlightButton = $('.highlighter-btn');
 
 $dt.css('cursor', 'pointer');
 $('a').click(function(e) {
@@ -13,3 +14,8 @@ $dt.on("click", function(e) {
     $(this).next().toggleClass('invisible');
 })
 
+$highlightButton.on("click", function() {
+    $('ul').each(function() {
+        $(this).children('li').last().css("backgroundColor", "yellow");
+    })
+})
