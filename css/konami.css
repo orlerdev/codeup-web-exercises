@@ -1,12 +1,15 @@
-
+* {
+    overflow-x: hidden;
+}
 
 .page-wrapper {
     background: black;
+    overflow-x: hidden;
 }
 
 .container {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     flex: 1;
 }
 
@@ -17,6 +20,7 @@
 .background-wrapper {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 
 /***********  JUNGLE LEVEL STYLING  ***********/
@@ -108,8 +112,12 @@
 /***********  TITLE SCREEN STARTER  ***********/
 .title-starter {
     display: flex;
-    position: relative;
+    position: absolute;
     flex: 1;
+    top: 100px;
+    right: 325px;
+    height: 840px;
+    width: 1621px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -117,12 +125,23 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: all ease 5s;
+    animation-name: slideIn;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
 }
 
-.title-starter:hover {
-    transform: translateX(100%);
+
+
+@keyframes slideIn {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 325px;
+    }
 }
+
 
 .title-blackout {
     display: none;
@@ -139,19 +158,19 @@
 
 .characters {
     position: absolute;
-    right: 67px;
-    bottom: 245px;
-    max-height: 450px;
-    max-width: 450px;
+    right: 321px;
+    bottom: 178px;
+    max-height: 425px;
+    max-width: 425px;
 }
 
 .selection-icon {
     position: absolute;
     /***********  CURSOR AT 1P  ***********/
-    bottom: 270px;
+    bottom: 207px;
     /***********  CURSOR AT 2P  ***********/
-    /* bottom: 208px; */
-    left: 110px;
+    /* bottom: 160px; */
+    left: 441px;
     height: 90px;
     width: 95px;
 }
