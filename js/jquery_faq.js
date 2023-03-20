@@ -7,7 +7,7 @@ $('a').click(function(e) {
     $dd.toggleClass('invisible');
 })
 
-$dt.click(function(e) {
+$dt.on("click", function(e) {
     e.preventDefault();
     $(this).toggleClass('highlight');
     $(this).next().toggleClass('invisible');
