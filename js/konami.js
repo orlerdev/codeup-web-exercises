@@ -8,6 +8,11 @@ $(function () {
     const equalArrays = (arr1, arr2) => {
         return $(arr1).not(arr2).length === 0 && $(arr2).not(arr1).length === 0;
     };
+    
+    //--      --////--    TITLE MUSIC ADDITION  --////--      --//
+// $(".title-starter").append("<audio id=\"music-title-music\" src=\"../assets/audio/title_music.mp3\"></audio>");
+// $("#music-title-music").get(0).play();
+
 
     //--      --////--    START SCREEN KEYPRESS LISTENER  --////--      --//
 
@@ -21,6 +26,7 @@ $(function () {
             console.log(`Time to move to jungle_load screen`);
             console.log(equalArrays(userInput, konamiCode));
         } else if (key === 13 && userInput.length === 10) {
+            alert("You have 30 lives!")
             console.log(`Successful code entry`);
             console.log(`Load jungle-_load screen with 30 lives`);
             return equalArrays(userInput, konamiCode);
