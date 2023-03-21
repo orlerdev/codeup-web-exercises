@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            padding: 10px;
+        }
+
+        th {
+            background-color: slategrey;
+            color: white;
+            font-size: 42px;
+
+        }
+
+
+        td {
+            background-color: #606060;
+            color: white;
+            font-size: 36px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+    </style>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Categories</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts">
+    </tbody>
+</table>
+
+<script src="../js/jquery-3.6.4.js"></script>
+
+<script>
+    const tableBody = document.querySelector("#insertProducts");
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    const fetchInventory = async () => {
+        try {
+            const res = await fetch("../data/inventory.json");
+            console.log(`fetched`);
+            const data = await res.json();
+            console.log(data);
+            return data;
+        } catch (e) {
+            console.log(e.message);
+        }
+    };
+
+    (async () => {
+        const inventoryList = await fetchInventory();
+
+        inventoryList.forEach(item => {
+            tableBody.appendChild(document.createElement("tr")).innerHTML = `
+<td>${item.title}</td>
+<td>${item.quantity}</td>
+<td>${item.categories}</td>
+<td>${item.price}</td>
+`;
+        });
+
+    })();
+
+    // TODO: Take the data from inventory.json and append it to the products table
+
+</script>
+
+</body>
+</html>

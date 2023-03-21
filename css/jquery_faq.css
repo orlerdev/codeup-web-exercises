@@ -1,0 +1,47 @@
+.page-wrapper {
+    overflow-x: hidden;
+}
+
+.container {
+    padding-bottom: 20px;
+}
+
+.column {
+    row-gap: 10px;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.highlight {
+    background-color: #c8ef83;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+button.highlighter-btn {
+    border: 2px solid black;
+}
+
+/***********  PHOTO SWAP  ***********/
+.img-wrapper {
+    position: relative;
+    aspect-ratio: 4/3; /***********  keep dimensions  ***********/
+    width: 100%;
+    background-image: url('../assets/img/slice1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+img.picture {
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    top: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+}
