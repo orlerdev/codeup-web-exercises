@@ -17,7 +17,6 @@
 
         }
 
-
         td {
             background-color: #606060;
             color: white;
@@ -45,6 +44,7 @@
     <tbody id="insertProducts">
     </tbody>
 </table>
+<button id="refresh-btn">Refresh Inventory</button>
 
 <script src="../js/jquery-3.6.4.js"></script>
 
@@ -64,17 +64,19 @@
     };
 
     (async () => {
-        const inventoryList = await fetchInventory();
+        $("#refresh-btn").on("click", async function () {
+                tableBody.innerHTML = '';
+            const inventoryList = await fetchInventory();
 
-        inventoryList.forEach(item => {
-            tableBody.appendChild(document.createElement("tr")).innerHTML = `
-<td>${item.title}</td>
-<td>${item.quantity}</td>
-<td>${item.categories}</td>
-<td>${item.price}</td>
-`;
+            inventoryList.forEach(item => {
+                tableBody.appendChild(document.createElement("tr")).innerHTML = `
+            <td>${item.title}</td>
+            <td>${item.quantity}</td>
+            <td>${item.categories}</td>
+            <td>${item.price}</td>
+        `;
+            });
         });
-
     })();
 
     // TODO: Take the data from inventory.json and append it to the products table
