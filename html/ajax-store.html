@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <style>
         h1 {
             text-align: center;
             font-size: xxx-large;
-            text-shadow: -1px -1px 15px slategrey;
+            border-bottom: 1px solid black;
+            text-shadow: -1px 1px 2px black;
+
         }
 
         table {
@@ -100,22 +102,19 @@
                     <tbody id="insertProducts">
                     </tbody>
                 </table>
-                <button id="refresh-btn">Refresh Inventory</button>
+                <button id="refreshBtn">Refresh Inventory</button>
             </div>
         </div>
     </div>
 </div>
 <script src="../js/jquery-3.6.4.js"></script>
-
 <script>
+    // // TODO: Create an AJAX GET request for the file under data/inventory.json
     const tableBody = document.querySelector("#insertProducts");
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
     const fetchInventory = async () => {
         try {
             const res = await fetch("../data/inventory.json");
-            console.log(`fetched`);
             const data = await res.json();
-            console.log(data);
             return data;
         } catch (e) {
             console.log(e.message);
@@ -123,10 +122,9 @@
     };
 
     (async () => {
-        $("#refresh-btn").on("click", async function () {
+        $("#refreshBtn").on("click", async function () {
             tableBody.innerHTML = "";
             const inventoryList = await fetchInventory();
-
             inventoryList.forEach(item => {
                 tableBody.appendChild(document.createElement("tr")).innerHTML = `
             <td>${item.title}</td>
@@ -139,8 +137,8 @@
     })();
 
     // TODO: Take the data from inventory.json and append it to the products table
-
 </script>
-
+<!--    WALKTHROUGH METHOD LINKED HERE, BETTER CODE   -->
+<!--<script src="../js/ajax-store.js"></script>-->
 </body>
 </html>
