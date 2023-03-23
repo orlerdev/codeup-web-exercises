@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/weather_map.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/a470e83216.css" crossorigin="anonymous">
+    <title>Weather Map</title>
+    <script src="js/keys.js"></script>
+</head>
+<body>
+<div class="page-wrapper" id="page-wrapper">
+
+    <!--    HEADER   -->
+    <header class="container">
+        <div class="logo-and-search-wrapper">
+            <div class="logo"></div>
+            <div class="current-time"></div>
+        </div>
+        <div class="current-weather-card-wrapper">
+        </div>
+    </header>
+
+    <!--    SIDE NAVIGATION   -->
+    <aside class="container">
+        <div class="nav-menu-header-wrapper">
+            <h3>Menu</h3>
+        </div>
+        <div class="nav-menu-upper-menu-wrapper">
+            <ul>
+                <li>Today</li>
+                <li>Hourly</li>
+                <li>Daily</li>
+                <li>Radar</li>
+                <li>Air Quality</li>
+            </ul>
+        </div>
+        <div class="nav-menu-lower-menu-wrapper">
+            <ul>
+                <li>Hurricane Tracker</li>
+                <li>Severe Weather</li>
+                <li>News</li>
+                <li>Video</li>
+                <li>Winter Center</li>
+            </ul>
+        </div>
+    </aside>
+    <section class="container selected-day">
+        <button>Left</button>
+        <div class="selected-day-slider-wrapper">
+            <div class="mon slider" style="background-image: url('#')"></div>
+            <div class="mon slider" style="background-image: url('#')"></div>
+            <div class="mon slider" style="background-image: url('#')"></div>
+            <div class="mon slider" style="background-image: url('#')"></div>
+        </div>
+        <button>Right</button>
+    </section>
+    <section class="container remaining days">
+        <div class="remaining-days-wrapper">
+            <div class="tues card" style="background-image: url('#')"></div>
+            <div class="wed card" style="background-image: url('#')"></div>
+            <div class="thurs card" style="background-image: url('#')"></div>
+            <div class="fri card" style="background-image: url('#')"></div>
+        </div>
+    </section>
+    <section class="container map-container">
+        <div id="map"></div>
+    </section>
+</div>
+<!-- SCRIPTS -->
+<script src="js/jquery-3.6.4.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/weather_map.js"></script>
+</body>
+</html>
