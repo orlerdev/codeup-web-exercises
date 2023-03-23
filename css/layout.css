@@ -3,7 +3,7 @@
     the behavior of the body tag, but is a div so that it can be styled
     with more flexibility than the body tag.
 */
-.page-wrapper {
+#page-wrapper {
     min-height: 100vh;
     display:flex;
     flex-direction: column;

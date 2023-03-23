@@ -1,0 +1,52 @@
+.container {
+    min-height: 100%;
+}
+
+#map {
+    height: 500px;
+    width: 800px;
+}
+
+
+.map-colum {
+    justify-content: space-between;
+    min-width: 100%;
+    flex: 1 0 0;
+    width: 100%;
+    height: 100%;
+}
+
+.search-marker-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 800px;
+}
+
+.search-input-div {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    width: 800px;
+    padding: 10px;
+}
+
+.zoom-selection-div {
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    padding: 10px;
+}
+
+#zoomRange {
+    width: 300px;
+}
+
+.marker-popup-div {
+    display: flex;
+    justify-content: end;
+    width: 800px;
+    padding: 10px;
+}
+
+

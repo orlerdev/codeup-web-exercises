@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapbox Maps API</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/mapbox_maps_api.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/a470e83216.css" crossorigin="anonymous">
+    <script src="js/keys.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+</head>
+<body>
+<div class="page-wrapper" id="page-wrapper">
+    <div class="container grow justify-center">
+        <div class="row grow full-width no-gap no-padding justify-space-between">
+            <div class="column map-column justify-center align-center">
+                <div class="search-marker-wrapper">
+                    <div class="search-input-div">
+                        <form action="">
+                            <label for="searchInput">Enter address:</label>
+                            <input type="text" id="searchInput"></input>
+                            <button type="submit" id="searchInputBtn">Take me there</button>
+                        </form>
+                    </div>
+                        <div class="marker-popup-div">
+                            <form action="">
+                                <label for="markerPopupInput">Add a marker:</label>
+                                <input id="markerPopupInput" type="text">
+                                <button type="submit" id="markerPopupBtn">Set Marker</button>
+                            </form>
+                        </div>
+                </div>
+                <div id="map"></div> <!--    MAP   -->
+                <div class="zoom-selection-div">
+                    <div class="zoom-input-wrapper">
+                        <label for="zoomRange"></label>
+                    </div>
+                    <div class="zoom-input-wrapper">
+                        <input type="range" step="any" id="zoomRange" name="zoom-range" min="0" max="24"></input>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SCRIPTS -->
+<script src="js/jquery-3.6.4.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/mapbox-geocoder.utils.js"></script>
+<script src="js/mapbox_maps_api.js
+
+"></script>
+</body>
+</html>
