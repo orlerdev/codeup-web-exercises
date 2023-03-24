@@ -26,16 +26,16 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 //--      --////--    LEFT SECTION VARIABLES  --////--      --//
-const rightSlides = document.querySelector(".right-slides");
-const rightSlide = document.querySelector(".right-slide");
+const slideContainer = document.querySelector('.slider-container');
+const slideRight = document.querySelector('.right-slide');
+const slideLeft = document.querySelector('.left-slide');
 const upBtn = document.querySelector(".up-button");
 const downBtn = document.querySelector(".down-button");
+const slidesLength = slideRight.querySelectorAll('div').length;
 const indicatorTab = document.querySelector(".indicator-icon-wrap");
-const leftSlide = document.querySelector(".left-slide");
+
 
 //--      --////--    ARRAYS  --////--      --//
-const leftSlideArray = [...document.querySelectorAll(".left-slide")];
-const rightSlideArray = [...document.querySelectorAll('.right-slide')];
 const indicatorArray = [...document.querySelectorAll(".indicator-icon-wrap")];
 
 //--      --////--    PHOTO ARRAYS  --////--      --//
@@ -60,30 +60,36 @@ const getWeatherPhoto = (weatherArr, randomNum) => {
 }
 
 let activeSlide = 0;
-leftSlide.style.top = `-${(slidesLength - 1) * 100}%`
-const setActiveSlide = () => {
-    leftSlideArray.forEach(slide => {
-        leftSlide.classList.remove("active");
-        leftSlide[activeSlide].classList.add("active");
-    });
-};
+let activeTab = indicatorTab.classList.contains('active');
+slideLeft.style.top = `-${(slidesLength - 1) * 100}%`
+// const setActiveSlide = () => {
+//     leftSlideArray.forEach(slide => {
+//         leftSlide.classList.remove("active");
+//         leftSlide[activeSlide].classList.add("active");
+//     });
+// };
+
+downBtn.addEventListener('click', () => changeSlide('down'))
+upBtn.addEventListener('click', () => changeSlide('up'))
 
 const changeSlide = (direction) => {
-    const sliderHeight = rightSlides.clientHeight;
-    if (direction === 'up') {
+    const sliderHeight = slideContainer.clientHeight;
+    if (direction === 'down') {
         activeSlide++
-        if (activeSlide > rightSlideArray.length - 1) {
+        activeTab++
+        if (activeSlide > slidesLength - 1) {
             activeSlide = 0;
         }
-    } else if (direction === 'down') {
+    } else if (direction === 'up') {
         activeSlide--
+        activeTab--
         if (activeSlide < 0) {
-            activeSlide = rightSlideArray.length - 1;
+            activeSlide = slidesLength - 1;
         }
     }
     
-    rightSlide.style.transform = `translateY(-${activeSlide * sliderHeight}px)`;
-    leftSlide.style.transform = `translateX(${activeSlide * sliderHeight}px)`
+    slideRight.style.transform = `translateY(-${activeSlide * sliderHeight}px)`;
+    slideLeft.style.transform = `translateY(${activeSlide * sliderHeight}px)`
 }
 
 function setTime() {
