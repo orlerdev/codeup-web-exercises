@@ -26,24 +26,24 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 //--      --////--    LEFT SECTION VARIABLES  --////--      --//
-const slideContainer = document.querySelector('.slider-container');
-const slideRight = document.querySelector('.right-slide');
-const slideLeft = document.querySelector('.left-slide');
+const slideContainer = document.querySelector(".slider-container");
+const slideRight = document.querySelector(".right-slide");
+const slideLeft = document.querySelector(".left-slide");
 const upBtn = document.querySelector(".up-button");
 const downBtn = document.querySelector(".down-button");
-const slidesLength = slideRight.querySelectorAll('div').length;
-const indicatorTab = document.querySelector(".indicator-icon-wrap");
-
+const slidesLength = slideRight.querySelectorAll("div").length;
+const tabContainer = document.querySelector(".day-indicator-col");
 
 //--      --////--    ARRAYS  --////--      --//
-const indicatorArray = [...document.querySelectorAll(".indicator-icon-wrap")];
+const indicatorArray = [...document.querySelectorAll(".indicator-tab")];
+let indicatorsLength = indicatorArray.length;
 
 //--      --////--    PHOTO ARRAYS  --////--      --//
 const sunnyDays = [];
 const hotDays = [];
 const windyDays = [];
 const cloudyDays = [];
-const rainyDays = [];
+const rainyDaysUrl = [];
 const snowyDays = [];
 const freezingDays = [];
 const thunderStorms = [];
@@ -53,43 +53,42 @@ const coldDays = [];
 //--      --////--    UTILITY FUNCTIONS  --////--      --//
 const randomNumberRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-let randomNum = 0;
+downBtn.addEventListener("click", () => changeSlide("down"));
+upBtn.addEventListener("click", () => changeSlide("up"));
+slideLeft.style.top = `-${(slidesLength - 1) * 100}%`;
 
 const getWeatherPhoto = (weatherArr, randomNum) => {
-    return weatherArr[randomNum];
-}
+    return `url('weatherArr[randomNum]'`;
+};
 
 let activeSlide = 0;
-let activeTab = indicatorTab.classList.contains('active');
-slideLeft.style.top = `-${(slidesLength - 1) * 100}%`
-// const setActiveSlide = () => {
-//     leftSlideArray.forEach(slide => {
-//         leftSlide.classList.remove("active");
-//         leftSlide[activeSlide].classList.add("active");
-//     });
-// };
-
-downBtn.addEventListener('click', () => changeSlide('down'))
-upBtn.addEventListener('click', () => changeSlide('up'))
-
 const changeSlide = (direction) => {
     const sliderHeight = slideContainer.clientHeight;
-    if (direction === 'down') {
-        activeSlide++
-        activeTab++
+    if (direction === "down") {
+        activeSlide++;
         if (activeSlide > slidesLength - 1) {
             activeSlide = 0;
+            slideLeft.style.transition = "none";
         }
-    } else if (direction === 'up') {
-        activeSlide--
-        activeTab--
+    } else if (direction === "up") {
+        activeSlide--;
         if (activeSlide < 0) {
             activeSlide = slidesLength - 1;
+            slideLeft.style.transition = "none";
         }
     }
-    
     slideRight.style.transform = `translateY(-${activeSlide * sliderHeight}px)`;
-    slideLeft.style.transform = `translateY(${activeSlide * sliderHeight}px)`
+    slideLeft.style.transform = `translateY(${activeSlide * sliderHeight}px)`;
+    slideRight.style.backgroundImage = 'url("../../assets/img/sunset-cliff.jpeg")';
+    indicatorArray.forEach(tab => tab.classList.remove("active"));
+    indicatorArray[activeSlide].classList.add("active");
+    setTimeout(() => {
+        slideLeft.style.transition = "";
+    }, 800);
+};
+
+const setStylesOnElement = function(styles, element){
+    Object.assign(element.style, styles);
 }
 
 function setTime() {
