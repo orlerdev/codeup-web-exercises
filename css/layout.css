@@ -20,12 +20,12 @@
     background colors and properties for each section that help users associate
     content within it as belonging to the same subject.
 */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 20px;
-    }
+/* .container { */
+/*     display: flex; */
+/*     flex-direction: column; */
+/*     align-items: center; */
+/*     row-gap: 20px; */
+/*     } */
 /* Combo classes to extend the container's versatility */
 .container.grow {
     flex: 1 0 0;

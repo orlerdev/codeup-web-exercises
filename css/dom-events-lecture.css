@@ -35,5 +35,5 @@ nav.navigation-wrapper {
 }
 
 [data-dropdown="menu"] {
-    pointer-events:
+    pointer-events: none;
 }
