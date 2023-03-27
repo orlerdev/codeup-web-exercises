@@ -1,131 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/weather_map.css">
-    <link rel="stylesheet" href="https://kit.fontawesome.com/a470e83216.css" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/weather_map.css">
+    <script src="./js/keys.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
     <title>Weather Map</title>
-    <script src="js/keys.js"></script>
 </head>
 <body>
-<div class="page-wrapper" id="page-wrapper">
-    <header class="container">
-        <div class="row">
-            <div class="search">
-                <form id="search-form">
-                    <div class="form-control">
-                        <label for="search-input">
-                            <span style="transition-delay: 0ms">S</span>
-                            <span style="transition-delay: 50ms">e</span>
-                            <span style="transition-delay: 100ms">a</span>
-                            <span style="transition-delay: 150ms">r</span>
-                            <span style="transition-delay: 200ms">c</span>
-                            <span style="transition-delay: 250ms">h</span>
-                        </label>
-                        <input id="search-input" type="text" required>
-                        <!--<label for="search-input">Search</label>-->
-                    </div>
-                </form>
-            </div>
-            <div class="header-date-time">
-                <div class="header-day"></div>
-                <div class="header-date"></div>
-                <div class="header-time"></div>
-            </div>
-            <div class="header-temp-wrap">
-                <div class="header-temp-row">
-                    <div class="header-temp-current">70º</div>
-                    <div class="header-temp-low">/59º</div>
-                </div>
-            </div>
+<div class="page-wrapper">
+    <div class="page-container">
+        <div class="overlay hide">
         </div>
-    </header>
-    <main class="container">
-        <div class="row">
-            <section class="left-section">
-                <div class="row">
-                    <div class="left-section-col">
-                        <div class="row">
-                            <div class="slider-overlay"></div>
-                            <div class="day-indicator-col">
-                                <div class="indicator-tab active"></div>
-                                <div class="indicator-tab"></div>
-                                <div class="indicator-tab"></div>
-                                <div class="indicator-tab"></div>
-                                <div class="indicator-tab"></div>
+        <div class="page-row">
+            <main class="sections-container">
+                <button class="five-day-btn">5 Day Forecast</button>
+                <button class="map-show-btn">Show Map</button>
+                <div class="forecast-container">
+                    <div class="forecast-card">
+                        <div class="card-info">
+                            <div class="card-head">
+                                <h2 class="card-date">March 27</h2>
                             </div>
-                            <div class="slider-col">
-                                <div class="slider-wrap">
-                                    <div class="slider-container">
-                                        <div class="left-slide">
-                                            <div style="background-color: var(--background)">
-                                                <h1>Day 5</h1>
-                                                <p>Make into a ul with info</p>
+                            <div class="card-body">
+                                <div class="wrap">
+                                    <ul class="card-left">
+                                        <li>
+                                            <div class="details">
+                                                <h3 class="type">SUNRISE</h3>
+                                                <h3 id="sunrise-value">5:24 am</h3>
                                             </div>
-                                            <div style="background-color: var(--background)">
-                                                <h1>Day 4</h1>
-                                                <p>with it's mountains</p>
+                                        </li>
+                                        <li>
+                                            <div class="details">
+                                                <h3 class="type">UV-INDEX</h3>
+                                                <h3 id="uvi-value">4.9</h3>
                                             </div>
-                                            <div style="background-color: var(--background)">
-                                                <h1>Day 3</h1>
-                                                <p>in the wilderness</p>
+                                        </li>
+                                        <li>
+                                            <div class="details">
+                                                <h3 class="type">HUMIDITY</h3>
+                                                <h3 id="humidity-value">24%</h3>
                                             </div>
-                                            <div style="background-color: var(--background)">
-                                                <h1>Day 2</h1>
-                                                <p>in the sunset</p>
+                                        </li>
+                                        <li>
+                                            <div class="details">
+                                                <h3 class="type">CLOUDS</h3>
+                                                <h3 id="clouds-value">30%</h3>
                                             </div>
-                                            <div style="background-color: var(--background)">
-                                                <h1>Day 1</h1>
-                                                <p>in the sunset</p>
+                                        </li>
+                                    </ul>
+                                    <ul class="card-right">
+                                        <li>
+                                            <div class="details">
+                                                <h3 class="type">SUNSET</h3>
+                                                <h3 id="sunset-valule">8:24 pm</h3>
                                             </div>
-                                        </div>
-                                        <div class="right-slide">
-                                            <div>1</div>
-                                            <div>2</div>
-                                            <div>3</div>
-                                            <div>4</div>
-                                            <div>5</div>
-                                        </div>
-                                        <div class="action-buttons">
-                                            <button class="up-button">
-                                                <i class="fas fa-arrow-up"></i>
-                                            </button>
-                                            <button class="down-button">
-                                                <i class="fas fa-arrow-down"></i>
-                                            </button>
-
-                                        </div>
-                                    </div>
+                                        </li>
+                                        <li>
+                                            <div class="details">
+                                                <h3 class="type">PRESSURE</h3>
+                                                <h3 id="pressure-value">45 hPa</h3>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="details">
+                                                <h3 class="type">VISIBILITY</h3>
+                                                <h3 id="visibility-value">2 miles</h3>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="details">
+                                                <h3 class="type">DEW POINT</h3>
+                                                <h3 id="dew-point-value">46º</h3>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+                            <div class="card-description">
+                                Sunny with a 0% chance of precipitation. High of 78 and a low of 62.
+                            </div>
                         </div>
+                    </div>
+                    <div class="forecast-indicator">
+                        <div id="tab1" class="indicator-tab active">3/28</div>
+                        <div id="tab2" class="indicator-tab">3/29</div>
+                        <div id="tab3" class="indicator-tab">3/30</div>
+                        <div id="tab4" class="indicator-tab">3/31</div>
+                        <div id="tab5" class="indicator-tab">4/1</div>
                     </div>
                 </div>
-            </section>
-            <section class="container right-section">
-                <div class="row map-row">
-                    <div class="map-zoom-col">
-                        <div class="map-wrap">
-                            <div id="map" style="background-image: url('../assets/img/weather_map_img/San-Antonio-Road-Map.jpg'); background-size: cover; background-repeat: no-repeat;"></div>
+                <section class="landing-section">
+                    <div class="wrap">
+                        <div class="loading-text">
+                            <div class="wrap">
+                                <div class="current-date"></div>
+                                <div class="current-time"></div>
+                            </div>
+                            <div class="current-temp"></div>
+                            <div class="search">
+                                <form>
+                                    <!--suppress HtmlFormInputWithoutLabel -->
+                                    <input id="hidden-search" type="text" placeholder="Search by address...">
+                                    <button class="search-btn" type="button"><img src="./icons/map-location-thin.svg" alt="">
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="current-pop"></div>
                         </div>
                     </div>
-                    <div class="zoom-col">
-                        <label for="zoom-input" style="font-size: xx-large;">+</label>
-                        <input type="range" name="zoom-input" id="zoom-input">
-                        <label for="zoom-input" style="font-size: xx-large;">-</label>
-                    </div>
+                </section>
+                <section class="map-container">
+                    <button class="home-btn" type="button"><img src="./icons/house-chimney-heart.svg" alt=""></button>
+                    <div id="map" style="width: 100%; height: 100%;"></div>
+                    <script src="./js/mapbox-geocoder.utils.js"></script>
+                    <script>
+                        mapboxgl.accessToken = "pk.eyJ1Ijoib3JsZXJkZXYiLCJhIjoiY2xmanZ2M290MDR3OTQxbno0bGN2bzU0MiJ9.1hvE1zeLlwdzOsuyufRE9A";
+                        const markerCoords = document.querySelector("#coordinates");
+                        const map = new mapboxgl.Map({
+                            container: "map", // container ID
+                            style: "mapbox://styles/mapbox/satellite-streets-v12", // style URL
+                            center: [-98.48962, 29.42692], // starting position [lng, lat]
+                            zoom: 9 // starting zoom
+                        });
 
-                </div>
-            </section>
+                        const marker = new mapboxgl.Marker({
+                            draggable: true
+                        })
+                            .setLngLat(map.getCenter())
+                            .addTo(map);
+
+                        function onDragEnd() {
+                            const lnglat = marker.getLngLat();
+                            map.setCenter(lnglat);
+                            console.log(lnglat);
+                        }
+
+                        marker.on("dragend", onDragEnd);
+
+                        const homeBtn = document.querySelector(".home-btn");
+
+                        homeBtn.addEventListener("click", () => {
+                            console.log("fired");
+                            map.setCenter([-98.48962, 29.42692]);
+                            const marker = new mapboxgl.Marker({
+                                draggable: true
+                            })
+                                .setLngLat(map.getCenter())
+                                .addTo(map);
+                        });
+
+                    </script>
+                </section>
+            </main>
         </div>
-    </main>
+    </div>
 </div>
-<!-- SCRIPTS -->
-<script src="js/jquery-3.6.4.js"></script>
-<script src="js/utils.js"></script>
-<script src="js/weather_map.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/weather_map.js"></script>
 </body>
 </html>
