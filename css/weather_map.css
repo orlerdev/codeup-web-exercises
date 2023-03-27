@@ -73,7 +73,6 @@ button.five-day-btn, button.map-show-btn {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 20px;
     align-items: start;
     z-index: 99;
     background: transparent;
@@ -85,7 +84,7 @@ button.five-day-btn, button.map-show-btn {
 
 /* FORECAST SHOW BUTTON */
 button.five-day-btn {
-    left: -300px;
+    left: -325px;
     top: 400px;
     width: 65vh;
     height: 200px;
@@ -101,7 +100,7 @@ button.five-day-btn:hover {
 
 /* MAP SHOW BUTTON */
 button.map-show-btn {
-    right: -300px;
+    right: -325px;
     top: 400px;
     width: 65vh;
     height: 200px;
