@@ -194,10 +194,6 @@ const exTwo = dogs.map(dog => dog.age);
 console.log(exTwo);
 
 // TODO 3: using map, create a new array of dog objects from the dogs array that only have dog names and age properties and values
-console.log("Exercise 3:");
-const exThree = dogs.map(dog => )
-
-
 
 // FILTER
 
