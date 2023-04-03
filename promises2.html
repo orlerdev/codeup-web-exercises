@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/promises2.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/a470e83216.css" crossorigin="anonymous">
+    <title>Promises2 Exercise</title>
+</head>
+<body>
+<div id="page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <section class="search">
+                    <form action="">
+                        <label for="character-input">Character</label>
+                        <input id="character-input" type="text" placeholder="Search by name...">
+                        <button class="char-btn">Search</button>
+                        <label for="planet-input">Planet</label>
+                        <input id="planet-input" type="text" placeholder="Search by name...">
+                        <button class="planet-btn">Search</button>
+                        <label for="film-input">Film</label>
+                        <input id="film-input" type="text" placeholder="Search by title...">
+                        <button class="film-btn">Search</button>
+                    </form>
+                </section>
+                <section class="outputs">
+                    <h1>Search Outputs</h1>
+                    <h2>Planet Results</h2>
+                    <ul class="character-results"></ul>
+                    <h2>Character Results</h2>
+                    <ul class="planet-results"></ul>
+                    <h2>Film Results</h2>
+                    <ul class="film-results"></ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SCRIPTS -->
+<script type="module" src="./js/promises2.js"></script>
+</body>
+</html>
