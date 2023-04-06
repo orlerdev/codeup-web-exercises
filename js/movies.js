@@ -2,7 +2,7 @@ import { api_url, img_path, search_api, form, search } from "./movie-variables.j
 import { getMovies } from "./get-movies.js";
 
 (async () => {
-    await getMovies(api_url);
+    // await getMovies(api_url);
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();

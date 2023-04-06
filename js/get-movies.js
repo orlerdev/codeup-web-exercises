@@ -13,7 +13,7 @@ export const getMovies = async (url) => {
 const showMovies = (movies) => {
     main.innerHTML = "";
     movies.forEach(movie => {
-        const { title, poster_path, vote_average, overview } = movie;
+        const { title, genre_ids, poster_path, vote_average, overview } = movie;
         const movieElement = document.createElement("div");
         const average = Math.round(vote_average);
         movieElement.classList.add("movie");
