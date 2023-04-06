@@ -39,7 +39,7 @@
 
     const fetchWeather = async () => {
         try {
-            const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${SAlat}&lon=${SAlong}&units=${imperial}&appid=${OWEATHER_KEY}`);
+            const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${SAlat}&lon=${SAlong}&units=${imperial}&appid=${openWeather}`);
             const data = await res.json();
             return data;
         } catch (e) {
